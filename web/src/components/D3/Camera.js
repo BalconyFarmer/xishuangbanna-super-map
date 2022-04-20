@@ -39,12 +39,12 @@ export default class Camera {
      * 打印相机位置
      */
     logCamera() {
-/*        console.log("+++++++++++++++++++++++++++++++++++")
+        console.log("+++++++++++++++++++++++++++++++++++")
         console.log("positionL:", this.app.viewer.camera.position)
         console.log("heading:", this.app.viewer.camera.heading)
         console.log("pitch:", this.app.viewer.camera.pitch)
         console.log("roll:", this.app.viewer.camera.roll)
-        console.log("+++++++++++++++++++++++++++++++++++")*/
+        console.log("+++++++++++++++++++++++++++++++++++")
     }
 
 

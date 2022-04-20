@@ -40,20 +40,38 @@ export default class Loaders {
             if (self.layer.visible) {
                 self.layer.visible = false
             } else {
+                this.app.viewer.camera.flyTo({// 设置视角
+                    destination: new Cesium.Cartesian3(-1109419.031647381, 5810716.043483989, 2389591.6044312157,),
+                    orientation: {
+                        heading: 0.05140801366573289, // east, default value is 0.0 (north) 左右摆头
+                        pitch: -0.6223203429673179, // default value (looking down) 上下摆头 -90俯视 0 平视
+                        roll: 6.283170042486411
+                    }
+                })
                 self.layer.visible = true
             }
         } else {
+            this.app.viewer.camera.flyTo({// 设置视角
+                destination: new Cesium.Cartesian3(-1109419.031647381, 5810716.043483989, 2389591.6044312157,),
+                orientation: {
+                    heading: 0.05140801366573289, // east, default value is 0.0 (north) 左右摆头
+                    pitch: -0.6223203429673179, // default value (looking down) 上下摆头 -90俯视 0 平视
+                    roll: 6.283170042486411
+                }
+            })
+
             //添加倾斜摄影模型
             function addS3MImg(scene, modelUrl) { //倾斜摄影\
                 let promise = scene.addS3MTilesLayerByScp(modelUrl, {
                     name: 'qxsy',
-                    cullEnabled	: true, // 剔除背面
+                    cullEnabled	: true, // 剔除背面,
                 });
                 promise.then(layer => {
+                    const see = layer.style3D
+                    see.bottomAltitude = 40;
                     self.layer = layer
                     layer.type = 'qxsy'
                     layer.name = "Config"
-                    self.layer = layer
                 });
 
                 return promise;

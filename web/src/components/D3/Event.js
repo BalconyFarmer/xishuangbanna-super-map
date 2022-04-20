@@ -95,6 +95,7 @@ export default class Event {
             let cartographic = ellipsoid.cartesianToCartographic(cartesian)
             let lng = self.app.Cesium.Math.toDegrees(cartographic.longitude);//经度值
             let lat = self.app.Cesium.Math.toDegrees(cartographic.latitude);//纬度值
+            console.log([lng, lat, cartographic.height],"拾取位置:")
             self.app.eventCenter.dispatchEvent({
                 type: 'pickPosition',
                 message: {p1: cartesian, p2: cartographic, p3: [lng, lat, cartographic.height]}
