@@ -15,8 +15,8 @@ export default class Providers {
 
             // 版纳地形服务
             let terrainProvider = new Cesium.CesiumTerrainProvider({
-                url : "http://192.168.1.35:8090/iserver/services/3D-local3DCache-DEMBN/rest/realspace/datas/DEM_BN",
-                isSct : true//地形服务源自SuperMap iServer发布时需设置isSct为true
+                url: "http://192.168.1.35:8090/iserver/services/3D-local3DCache-DEMBN/rest/realspace/datas/DEM_BN",
+                isSct: true//地形服务源自SuperMap iServer发布时需设置isSct为true
             })
             this.app.viewer.terrainProvider = terrainProvider;
         } else {
@@ -37,7 +37,8 @@ export default class Providers {
         // })
 
         var a = new Cesium.SuperMapImageryProvider({
-            url : "http://192.168.1.35:8090/iserver/services/map-agscachev2-IMG/rest/maps/IMG"
+            url: "http://192.168.1.35:8090/iserver/services/map-agscachev2-IMG/rest/maps/IMG",
+            minimumLevel: 1, maximumLevel: 17
         });
 
         this.app.viewer.imageryLayers.addImageryProvider(a);
@@ -129,7 +130,7 @@ export default class Providers {
         // });
 
         var labelImagery = new Cesium.SuperMapImageryProvider({
-            url : "http://192.168.1.35:8090/iserver/services/map-agscache-IMGLABBN/rest/maps/IMG_LAB_BN"
+            url: "http://192.168.1.35:8090/iserver/services/map-agscache-IMGLABBN/rest/maps/IMG_LAB_BN"
         });
 
         imageryLayers.addImageryProvider(labelImagery);

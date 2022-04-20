@@ -23,6 +23,7 @@ export default class KMTL {
         setTimeout(function () {
             self.app.providers.initImageryProvider()
             self.app.providers.tiandiBiaozhu()
+            self.app.limitCamera()
             self.loadJson()
         }, 500)
     }

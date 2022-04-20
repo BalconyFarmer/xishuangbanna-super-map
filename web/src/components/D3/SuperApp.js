@@ -42,8 +42,10 @@ export default class SuperApp {
      */
     limitCamera() {
         // 限制最大最小缩放比例
-        // this.viewer.scene.screenSpaceCameraController.maximumZoomDistance = 500
-        // this.viewer.scene.screenSpaceCameraController.minimumZoomDistance = 1
+        // this.viewer.scene.screenSpaceCameraController.maximumZoomDistance =20000
+        // this.viewer.scene.screenSpaceCameraController.minimumZoomDistance = 20000
+        // this.viewer.scene.screenSpaceCameraController.enableZoom  = false
+
     }
 
 
