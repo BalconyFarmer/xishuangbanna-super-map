@@ -1,0 +1,76 @@
+body {
+  display: block;
+  margin: 0px;
+  overflow-y: hidden;
+}
+
+.disSelect {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+
+.colum {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/*定义滚动条高宽及背景
+高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道
+ 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+.hasMargin {
+  margin: 5px;
+}
+
+.title {
+  font-weight: bold;
+  width: 100%;
+  background-color: rgba(64, 158, 255, 0.2);
+  font-size: 15px;
+  border-radius: 4px;
+}
+
+.finger {
+  cursor: pointer
+}
+
+/*定义滑块
+ 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #555;
+}
+
+.el-dialog {
+  background: rgba(152, 205, 236, 0.5) !important;
+  width: 500px;
+  height: 700px;
+}
+
+.disableMenu {
+  color: #bbbbbb;
+}
+

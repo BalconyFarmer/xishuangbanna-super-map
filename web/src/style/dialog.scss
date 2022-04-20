@@ -1,0 +1,22 @@
+.diaAll {
+  width: 100%;
+  height: 100%;
+
+  .top {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    .item {
+      margin: 20px;
+    }
+  }
+
+  .beizhu {
+    width: 100%;
+    height: 10%;
+  }
+}
