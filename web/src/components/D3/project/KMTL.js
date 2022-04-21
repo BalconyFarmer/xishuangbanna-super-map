@@ -47,7 +47,7 @@ export default class KMTL {
     loadJson () {
         this.app.viewer.dataSources.add(
             Cesium.GeoJsonDataSource.load(
-                "http://localhost:8083/3Dstatic/西双版纳傣族自治州.json",
+                require("../../api/西双版纳傣族自治州.json"),
                 {
                     stroke: Cesium.Color.YELLOW,
                     fill: Cesium.Color.YELLOW.withAlpha(0.0),

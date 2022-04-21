@@ -295,7 +295,7 @@ export default {
         },
         handleSelect(item) {
             let params = new Cesium.HeadingPitchRange(5.901089214916513, -0.40668579780875524, 1000)
-            this.superApp.viewer.zoomTo(item.address,params)
+            this.superApp.viewer.zoomTo(item.address, params)
         },
         querySearch(queryString, cb) {
             let restaurants = this.restaurants;
@@ -330,9 +330,12 @@ export default {
                 this.menusList.push(type)
                 const self = this
                 getAllJinggaiByType(type).then(res => {
+                        // debugger
                         res.data.forEach(item => {
                             let arr = []
-                            arr = item.position.split(",")
+                            arr[0] = item.pointJosn.lng
+                            arr[1] = item.pointJosn.lat
+                            arr[2] = 0
 
                             if (type == "防控段R") {
                                 let _arr = []

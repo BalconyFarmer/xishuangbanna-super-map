@@ -414,6 +414,7 @@ export default class Entities {
                 height: 60,
                 scale: 1,
                 pixelOffset: new this.app.Cesium.Cartesian2(0, 0),
+                verticalOrigin: Cesium.VerticalOrigin.BOTTOM,//贴地属性
             },
             // 文字
             label: {
