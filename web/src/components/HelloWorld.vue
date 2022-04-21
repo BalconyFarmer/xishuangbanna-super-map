@@ -174,7 +174,7 @@
 <script>
 import SuperApp from "./D3/SuperApp";
 import KMTL from "./D3/project/KMTL";
-import {getAllJinggaiByType} from "./api"
+import {getAllJinggaiByType} from "./api/api"
 import 'animate.css';
 
 export default {
