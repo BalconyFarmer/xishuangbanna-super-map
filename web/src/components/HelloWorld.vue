@@ -72,21 +72,21 @@
                     <el-checkbox-group v-model="checkList">
                         <div class="subMenu1All">
                             <div class="subMenu1">
-                                <el-checkbox @change="handleRightMenus01('机场')" label="机场"></el-checkbox>
-                                <el-checkbox @change="handleRightMenus01('酒店')" label="酒店"></el-checkbox>
-                                <el-checkbox @change="handleRightMenus01('超市')" label="超市"></el-checkbox>
-                                <el-checkbox @change="handleRightMenus01('餐饮')" label="餐饮"></el-checkbox>
-                                <el-checkbox @change="handleRightMenus01('查缉点')" label="查缉点"></el-checkbox>
-                                <el-checkbox @change="handleRightMenus01('防控点')" label="防控点"></el-checkbox>
-                                <el-checkbox @change="handleRightMenus01('出租房')" label="出租房"></el-checkbox>
+                                <el-checkbox @change="handleRightMenus('机场')" label="机场"></el-checkbox>
+                                <el-checkbox @change="handleRightMenus('酒店')" label="酒店"></el-checkbox>
+                                <el-checkbox @change="handleRightMenus('超市')" label="超市"></el-checkbox>
+                                <el-checkbox @change="handleRightMenus('餐饮')" label="餐饮"></el-checkbox>
+                                <el-checkbox @change="handleRightMenus('查缉点')" label="查缉点"></el-checkbox>
+                                <el-checkbox @change="handleRightMenus('防控点')" label="防控点"></el-checkbox>
+                                <el-checkbox @change="handleRightMenus('出租房')" label="出租房"></el-checkbox>
                             </div>
                             <div class="subMenu1">
-                                <el-checkbox @change="handleRightMenus01('医院')" label="医院"></el-checkbox>
-                                <el-checkbox @change="handleRightMenus01('学校')" label="学校"></el-checkbox>
-                                <el-checkbox @change="handleRightMenus01('银行')" label="银行"></el-checkbox>
-                                <el-checkbox @change="handleRightMenus01('公司')" label="公司"></el-checkbox>
-                                <el-checkbox @change="handleRightMenus01('候车站')" label="候车站"></el-checkbox>
-                                <el-checkbox @change="handleRightMenus01('旅游景点')" label="旅游景点"></el-checkbox>
+                                <el-checkbox @change="handleRightMenus('医院')" label="医院"></el-checkbox>
+                                <el-checkbox @change="handleRightMenus('学校')" label="学校"></el-checkbox>
+                                <el-checkbox @change="handleRightMenus('银行')" label="银行"></el-checkbox>
+                                <el-checkbox @change="handleRightMenus('公司')" label="公司"></el-checkbox>
+                                <el-checkbox @change="handleRightMenus('候车站')" label="候车站"></el-checkbox>
+                                <el-checkbox @change="handleRightMenus('旅游景点')" label="旅游景点"></el-checkbox>
                             </div>
                         </div>
                     </el-checkbox-group>
@@ -330,12 +330,25 @@ export default {
                 this.menusList.push(type)
                 const self = this
                 getAllJinggaiByType(type).then(res => {
-                        // debugger
                         res.data.forEach(item => {
                             let arr = []
-                            arr[0] = item.pointJosn.lng
-                            arr[1] = item.pointJosn.lat
-                            arr[2] = 0
+                            let iconURL = null
+                            if (item.pointJosn instanceof Object) {
+                                arr[0] = item.pointJosn.lng
+                                arr[1] = item.pointJosn.lat
+                                arr[2] = 0
+                                console.log(111111111111)
+                                iconURL = 'd3/icons/' + type + ".png"
+                            } else if (item.gisJson instanceof Array) {
+                                arr[0] = item.gisJson[1]
+                                arr[1] = item.gisJson[0]
+                                arr[2] = 0
+                                console.log(2222222222222)
+                                iconURL = 'd3/icons/' + "坐标-fill.png"
+
+                            }
+
+                            console.log(res.data, arr, "arrarrarr")
 
                             if (type == "防控段R") {
                                 let _arr = []
@@ -344,7 +357,6 @@ export default {
                                 })
                                 self.superApp.addEffectFlowLine(_arr)
                             } else {
-                                const iconURL = 'd3/icons/' + type + ".png"
                                 self.superApp.entities.addIcon1(arr, iconURL, type, "vr")
                             }
                         })
@@ -355,7 +367,7 @@ export default {
 
 
         },
-        handleRightMenus01(type) {
+/*        handleRightMenus01(type) {
             const self = this
             getAllJinggaiByType(type).then(res => {
                     res.data.forEach(item => {
@@ -367,7 +379,7 @@ export default {
                     self.updateRes()
                 }
             )
-        },
+        },*/
 
         saveJsonVR() {
             const index = this.VRSettingList.length + 1
