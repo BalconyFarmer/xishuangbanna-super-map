@@ -330,6 +330,8 @@ export default {
                 this.menusList.push(type)
                 const self = this
                 getAllJinggaiByType(type).then(res => {
+                    const see = res.data
+                    debugger
                         res.data.forEach(item => {
                             let arr = []
                             let iconURL = null
