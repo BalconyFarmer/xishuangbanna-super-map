@@ -187,25 +187,25 @@ export default class SuperApp {
      * 线框白模
      */
     outlineMode() {
-        this.viewer.scene.camera.setView({
-            destination: new Cesium.Cartesian3(-1582723.045963302, 5317134.832891206, 3147506.8171177055),
-            orientation: {
-                heading: 3.376613944238855,
-                pitch: -0.2719071645433542,
-                roll: 6.283172414416338
-            }
-        });
-        let promise = this.viewer.scene.open('http://www.supermapol.com/realspace/services/3D-CQmodel_wireframe_2000/rest/realspace'); //重庆白模，特效用
-        const self = this
-        Cesium.when.all(promise, function (layers) {
-            let layer = self.viewer.scene.layers.find("CQmodel");
-            layer.setPBRMaterialFromJSON("./data/WhiteModel.json");
-            layer.style3D.fillStyle = Cesium.FillStyle.Fill_And_WireFrame;
-            layer.wireFrameMode = Cesium.WireFrameType.EffectOutline;
-            let initialColor = "rgba(27,255,0,0.21)";
-            layer.style3D.lineColor = Cesium.Color.fromCssColorString(initialColor);
-            layer.style3D.lineWidth = 10;
-        })
+        // this.viewer.scene.camera.setView({
+        //     destination: new Cesium.Cartesian3(-1582723.045963302, 5317134.832891206, 3147506.8171177055),
+        //     orientation: {
+        //         heading: 3.376613944238855,
+        //         pitch: -0.2719071645433542,
+        //         roll: 6.283172414416338
+        //     }
+        // });
+        // let promise = this.viewer.scene.open('http://www.supermapol.com/realspace/services/3D-CQmodel_wireframe_2000/rest/realspace'); //重庆白模，特效用
+        // const self = this
+        // Cesium.when.all(promise, function (layers) {
+        //     let layer = self.viewer.scene.layers.find("CQmodel");
+        //     layer.setPBRMaterialFromJSON("./data/WhiteModel.json");
+        //     layer.style3D.fillStyle = Cesium.FillStyle.Fill_And_WireFrame;
+        //     layer.wireFrameMode = Cesium.WireFrameType.EffectOutline;
+        //     let initialColor = "rgba(27,255,0,0.21)";
+        //     layer.style3D.lineColor = Cesium.Color.fromCssColorString(initialColor);
+        //     layer.style3D.lineWidth = 10;
+        // })
 
     }
 
