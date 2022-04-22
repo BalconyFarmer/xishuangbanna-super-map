@@ -331,7 +331,7 @@ export default {
                 const self = this
                 getAllJinggaiByType(type).then(res => {
                     const see = res.data
-                    debugger
+                    // debugger
                         res.data.forEach(item => {
                             let arr = []
                             let iconURL = null
@@ -369,6 +369,7 @@ export default {
 
 
         },
+
 /*        handleRightMenus01(type) {
             const self = this
             getAllJinggaiByType(type).then(res => {
