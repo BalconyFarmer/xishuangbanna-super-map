@@ -13,9 +13,13 @@ export default class Providers {
             //     isSct: false
             // })
 
+            // let url = "http://192.168.1.35:8090/iserver/services/3D-local3DCache-DEMBN/rest/realspace/datas/DEM_BN"
+            let url = "http://118.24.128.22:58090/iserver/services/3D-local3DCache-DEMBN/rest/realspace/datas/DEM_BN"
+
+
             // 版纳地形服务
             let terrainProvider = new Cesium.CesiumTerrainProvider({
-                url: "http://192.168.1.35:8090/iserver/services/3D-local3DCache-DEMBN/rest/realspace/datas/DEM_BN",
+                url: url,
                 isSct: true//地形服务源自SuperMap iServer发布时需设置isSct为true
             })
             this.app.viewer.terrainProvider = terrainProvider;
@@ -36,8 +40,11 @@ export default class Providers {
         //     key: "AksNtgh8bFWZX_9HvRfHw1J_CfUkEvtXKTnvr5gAZu9SdO0HZoFukp9kJIDPz5pd" //由BingMap官网申请的密钥
         // })
 
+        // let url = "http://192.168.1.35:8090/iserver/services/map-agscachev2-IMG/rest/maps/IMG"
+        let url = "http://118.24.128.22:58090/iserver/services/map-agscachev2-IMG/rest/maps/IMG"
+
         var a = new Cesium.SuperMapImageryProvider({
-            url: "http://192.168.1.35:8090/iserver/services/map-agscachev2-IMG/rest/maps/IMG",
+            url: url,
             minimumLevel: 1, maximumLevel: 17
         });
 
@@ -129,8 +136,11 @@ export default class Providers {
         //     token: '4a00a1dc5387b8ed8adba3374bd87e5e'
         // });
 
+        // let url= "http://192.168.1.35:8090/iserver/services/map-agscache-IMGLABBN/rest/maps/IMG_LAB_BN"
+        let url= "http://118.24.128.22:58090/iserver/services/map-agscache-IMGLABBN/rest/maps/IMG_LAB_BN"
+
         var labelImagery = new Cesium.SuperMapImageryProvider({
-            url: "http://192.168.1.35:8090/iserver/services/map-agscache-IMGLABBN/rest/maps/IMG_LAB_BN"
+            url: url
         });
 
         imageryLayers.addImageryProvider(labelImagery);
