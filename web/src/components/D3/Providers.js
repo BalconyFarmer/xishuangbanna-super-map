@@ -14,7 +14,8 @@ export default class Providers {
             // })
 
             // let url = "http://192.168.1.35:8090/iserver/services/3D-local3DCache-DEMBN/rest/realspace/datas/DEM_BN"
-            let url = "http://118.24.128.22:58090/iserver/services/3D-local3DCache-DEMBN/rest/realspace/datas/DEM_BN"
+            // let url = "http://118.24.128.22:58090/iserver/services/3D-local3DCache-DEMBN/rest/realspace/datas/DEM_BN"
+            let url = "http://localhost:8090/iserver/services/3D-local3DCache-DEMBN/rest/realspace/datas/DEM_BN"
 
 
             // 版纳地形服务
@@ -41,7 +42,8 @@ export default class Providers {
         // })
 
         // let url = "http://192.168.1.35:8090/iserver/services/map-agscachev2-IMG/rest/maps/IMG"
-        let url = "http://118.24.128.22:58090/iserver/services/map-agscachev2-IMG/rest/maps/IMG"
+        // let url = "http://118.24.128.22:58090/iserver/services/map-agscachev2-IMG/rest/maps/IMG"
+        let url = "http://localhost:8090/iserver/services/map-agscachev2-IMG/rest/maps/IMG"
 
         var a = new Cesium.SuperMapImageryProvider({
             url: url,
@@ -137,7 +139,8 @@ export default class Providers {
         // });
 
         // let url= "http://192.168.1.35:8090/iserver/services/map-agscache-IMGLABBN/rest/maps/IMG_LAB_BN"
-        let url= "http://118.24.128.22:58090/iserver/services/map-agscache-IMGLABBN/rest/maps/IMG_LAB_BN"
+        // let url= "http://118.24.128.22:58090/iserver/services/map-agscache-IMGLABBN/rest/maps/IMG_LAB_BN"
+        let url= "http://localhost:8090/iserver/services/map-agscache-IMGLABBN/rest/maps/IMG_LAB_BN"
 
         var labelImagery = new Cesium.SuperMapImageryProvider({
             url: url
