@@ -61,11 +61,11 @@
                         <div class="icon icon9"></div>
                         <span>防控段</span>
                     </div>
-                    <div :class="[menusList.indexOf('防控段R') != -1 ?'active':'disAcitve']" class="menu11"
-                         @click="handleRightMenus('防控段R')">
-                        <div class="icon icon9"></div>
-                        <span>防控段R</span>
-                    </div>
+                    <!--                    <div :class="[menusList.indexOf('防控段R') != -1 ?'active':'disAcitve']" class="menu11"-->
+                    <!--                         @click="handleRightMenus('防控段R')">-->
+                    <!--                        <div class="icon icon9"></div>-->
+                    <!--                        <span>防控段R</span>-->
+                    <!--                    </div>-->
                 </div>
 
                 <div class="subMenu" v-if="menusList.indexOf('平安版纳检查点') != -1">
@@ -351,15 +351,7 @@ export default {
                                     arr[2] = 0
                                 }
 
-                                if (type == "防控段R") {
-                                    let _arr = []
-                                    arr.forEach(item1 => {
-                                        _arr.push(parseFloat(item1))
-                                    })
-                                    self.superApp.addEffectFlowLine(_arr)
-                                } else {
-                                    self.superApp.entities.addIcon1(arr, iconURL, type, "vr")
-                                }
+                                self.superApp.entities.addIcon1(arr, iconURL, type, "vr")
                             }
                         })
                         self.updateRes()
