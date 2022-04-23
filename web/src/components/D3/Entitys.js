@@ -413,7 +413,7 @@ export default class Entities {
                 width: 60,
                 height: 60,
                 scale: 1,
-                pixelOffset: new this.app.Cesium.Cartesian2(0, 0),
+                pixelOffset: new Cesium.Cartesian2(0, 40),
                 verticalOrigin: Cesium.VerticalOrigin.BOTTOM,//贴地属性
             },
             // 文字
@@ -477,5 +477,16 @@ export default class Entities {
         });
 
         return [_a, _b]
+    }
+
+    addLineReal(arr) {
+        const _a = this.app.viewer.entities.add({ // 用于打底的线
+            polyline: {
+                positions: Cesium.Cartesian3.fromDegreesArray   (arr),
+                width: 15, // 线的宽度，像素为单位
+                material: Cesium.Color.RED,
+                clampToGround: true
+            }
+        });
     }
 }

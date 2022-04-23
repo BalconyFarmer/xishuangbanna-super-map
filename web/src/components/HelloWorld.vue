@@ -338,23 +338,42 @@ export default {
                             iconURL = 'd3/icons/' + type + ".png"
                         }
 
-                        res.data.forEach((item, index) => {
-                            if (index < 100) {
-                                let arr = []
-                                if (item.pointJosn instanceof Object) {
-                                    arr[0] = item.pointJosn.lng
-                                    arr[1] = item.pointJosn.lat
-                                    arr[2] = 0
-                                } else if (item.gisJson instanceof Array) {
-                                    arr[0] = item.gisJson[1]
-                                    arr[1] = item.gisJson[0]
-                                    arr[2] = 0
+                        if (type == "防控段") {
+                            res.data.forEach(item => {
+                                let  arr = []
+                                item.lineGisJosn.forEach(item1 => {
+                                    arr.push(item1.lng)
+                                    arr.push(item1.lat)
+                                })
+                                if (arr.length) {
+                                    self.superApp.entities.addLineReal(arr)
                                 }
+                                console.log(arr,"++++++++++++")
+                            })
+                        } else {
+                            res.data.forEach((item, index) => {
+                                if (index < 100) {
+                                    let arr = []
+                                    if (item.pointJosn instanceof Object) {
+                                        arr[0] = item.pointJosn.lng
+                                        arr[1] = item.pointJosn.lat
+                                        arr[2] = 0
+                                    } else if (item.gisJson instanceof Array) {
+                                        arr[0] = item.gisJson[1]
+                                        arr[1] = item.gisJson[0]
+                                        arr[2] = 0
+                                    }
 
-                                self.superApp.entities.addIcon1(arr, iconURL, type, "vr")
-                            }
-                        })
+                                    self.superApp.entities.addIcon1(arr, iconURL, type, "vr")
+                                }
+                            })
+                        }
+
+
                         self.updateRes()
+
+
+
                     }
                 )
             }
