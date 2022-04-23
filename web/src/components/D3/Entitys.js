@@ -401,12 +401,13 @@ export default class Entities {
     /**
      * 添加警员图标
      */
-    addIcon1(pointS, type, name, showFlag) {
+    addIcon1(pointS, type, name, showFlag, allData) {
         const _po = this.app.c3Transform.longToC3(parseFloat(pointS[0]), parseFloat(pointS[1]), parseFloat(pointS[2]) + 100)
 
         const result = this.app.viewer.entities.add({
             type: showFlag,
             name: name,
+            allData: allData,
             position: _po,
             billboard: {
                 image: require("./img/" + type),
@@ -482,7 +483,7 @@ export default class Entities {
     addLineReal(arr) {
         const _a = this.app.viewer.entities.add({ // 用于打底的线
             polyline: {
-                positions: Cesium.Cartesian3.fromDegreesArray   (arr),
+                positions: Cesium.Cartesian3.fromDegreesArray(arr),
                 width: 15, // 线的宽度，像素为单位
                 material: Cesium.Color.RED,
                 clampToGround: true

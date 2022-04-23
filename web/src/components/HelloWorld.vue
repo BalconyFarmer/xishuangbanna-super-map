@@ -123,7 +123,8 @@
 
         <div id="tooltip">
             <div>{{ entityName }}</div>
-            <div>坐标:xxxxxxx</div>
+            <div v-if="hoverMsg">{{ hoverMsg.name }}</div>
+            <div v-if="hoverMsg">{{ hoverMsg.gisJson.toString() }}</div>
         </div>
 
         <el-dialog
@@ -213,7 +214,8 @@ export default {
             dialogVisible: false,
             restaurants: [
                 {"value": "暂无数据", "address": "暂无数据"},
-            ]
+            ],
+            hoverMsg: null
         }
     },
     //自定义指令
@@ -340,7 +342,7 @@ export default {
 
                         if (type == "防控段") {
                             res.data.forEach(item => {
-                                let  arr = []
+                                let arr = []
                                 item.lineGisJosn.forEach(item1 => {
                                     arr.push(item1.lng)
                                     arr.push(item1.lat)
@@ -348,7 +350,7 @@ export default {
                                 if (arr.length) {
                                     self.superApp.entities.addLineReal(arr)
                                 }
-                                console.log(arr,"++++++++++++")
+                                console.log(arr, "++++++++++++")
                             })
                         } else {
                             res.data.forEach((item, index) => {
@@ -364,14 +366,13 @@ export default {
                                         arr[2] = 0
                                     }
 
-                                    self.superApp.entities.addIcon1(arr, iconURL, type, "vr")
+                                    self.superApp.entities.addIcon1(arr, iconURL, type, "vr", item)
                                 }
                             })
                         }
 
 
                         self.updateRes()
-
 
 
                     }
@@ -437,6 +438,7 @@ export default {
 
         this.superApp.eventCenter.addEventListener('hoverE', function (data) {
             if (data.message.en) {
+                self.hoverMsg = data.message.en.allData
                 dom.style.display = "block"
                 dom.style.left = data.message.position.startPosition.x + "px"
                 dom.style.top = data.message.position.startPosition.y + 10 + "px"
