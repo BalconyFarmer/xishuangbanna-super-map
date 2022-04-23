@@ -330,36 +330,36 @@ export default {
                 this.menusList.push(type)
                 const self = this
                 getAllJinggaiByType(type).then(res => {
-                    const see = res.data
-                    // debugger
-                        res.data.forEach(item => {
-                            let arr = []
-                            let iconURL = null
-                            if (item.pointJosn instanceof Object) {
-                                arr[0] = item.pointJosn.lng
-                                arr[1] = item.pointJosn.lat
-                                arr[2] = 0
-                                console.log(111111111111)
-                                iconURL = 'd3/icons/' + type + ".png"
-                            } else if (item.gisJson instanceof Array) {
-                                arr[0] = item.gisJson[1]
-                                arr[1] = item.gisJson[0]
-                                arr[2] = 0
-                                console.log(2222222222222)
-                                iconURL = 'd3/icons/' + "坐标-fill.png"
+                        let menuList = ['机场', '酒店', '超市', '餐饮', '查缉点', '防控点', '出租房', '医院', '学校', '银行', '公司', '候车站', '旅游景点',]
+                        let iconURL = null
+                        if (menuList.indexOf(type) != -1) {
+                            iconURL = 'd3/icons/' + "坐标-fill.png"
+                        } else {
+                            iconURL = 'd3/icons/' + type + ".png"
+                        }
 
-                            }
+                        res.data.forEach((item, index) => {
+                            if (index < 100) {
+                                let arr = []
+                                if (item.pointJosn instanceof Object) {
+                                    arr[0] = item.pointJosn.lng
+                                    arr[1] = item.pointJosn.lat
+                                    arr[2] = 0
+                                } else if (item.gisJson instanceof Array) {
+                                    arr[0] = item.gisJson[1]
+                                    arr[1] = item.gisJson[0]
+                                    arr[2] = 0
+                                }
 
-                            console.log(res.data, arr, "arrarrarr")
-
-                            if (type == "防控段R") {
-                                let _arr = []
-                                arr.forEach(item1 => {
-                                    _arr.push(parseFloat(item1))
-                                })
-                                self.superApp.addEffectFlowLine(_arr)
-                            } else {
-                                self.superApp.entities.addIcon1(arr, iconURL, type, "vr")
+                                if (type == "防控段R") {
+                                    let _arr = []
+                                    arr.forEach(item1 => {
+                                        _arr.push(parseFloat(item1))
+                                    })
+                                    self.superApp.addEffectFlowLine(_arr)
+                                } else {
+                                    self.superApp.entities.addIcon1(arr, iconURL, type, "vr")
+                                }
                             }
                         })
                         self.updateRes()
@@ -370,19 +370,19 @@ export default {
 
         },
 
-/*        handleRightMenus01(type) {
-            const self = this
-            getAllJinggaiByType(type).then(res => {
-                    res.data.forEach(item => {
-                        let arr = []
-                        arr = item.position.split(",")
-                        const iconURL = 'd3/icons/' + "坐标-fill.png"
-                        self.superApp.entities.addIcon1(arr, iconURL, type, "vr")
-                    })
-                    self.updateRes()
-                }
-            )
-        },*/
+        /*        handleRightMenus01(type) {
+                    const self = this
+                    getAllJinggaiByType(type).then(res => {
+                            res.data.forEach(item => {
+                                let arr = []
+                                arr = item.position.split(",")
+                                const iconURL = 'd3/icons/' + "坐标-fill.png"
+                                self.superApp.entities.addIcon1(arr, iconURL, type, "vr")
+                            })
+                            self.updateRes()
+                        }
+                    )
+                },*/
 
         saveJsonVR() {
             const index = this.VRSettingList.length + 1
