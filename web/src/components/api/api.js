@@ -58,6 +58,9 @@ export function getAllJinggaiByType(params) {
             if (item.typeDesc == params) {
                 list.data.push(item)
             }
+            if (item.pointName == params) { // 拦阻桩
+                list.data.push(item)
+            }
         })
         resolve(list);
     });
