@@ -79,7 +79,9 @@ export default class Loaders {
 
             // let url = "http://192.168.1.35:8090/iserver/services/3D-local3DCache-QingXieSheYing/rest/realspace/datas/QX_BN/config"
             // let url = "http://118.24.128.22:58090/iserver/services/3D-local3DCache-QingXieSheYing/rest/realspace/datas/QX_BN/config"
-            let url = "http://localhost:8090/iserver/services/3D-local3DCache-QingXieSheYing/rest/realspace/datas/QX_BN/config"
+            // let url = "http://localhost:8090/iserver/services/3D-local3DCache-QingXieSheYing/rest/realspace/datas/QX_BN/config"
+
+            let url = this.app.kmtl.superMapUrl + "/iserver/services/3D-local3DCache-QingXieSheYing/rest/realspace/datas/QX_BN/config"
 
             addS3MImg(this.app.viewer.scene, url)
 
