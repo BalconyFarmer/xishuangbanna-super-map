@@ -226,7 +226,7 @@ export default class Measure {
     //   清除等值线
     clearLine() {
         updateContourLine(-10000);
-    };
+    }
 
     //   设置等值线
     updateContourLine(height) {
@@ -241,7 +241,7 @@ export default class Measure {
                 setHypsometricSetting();
             }
         }
-    };
+    }
 
 
 }

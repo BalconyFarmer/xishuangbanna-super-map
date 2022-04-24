@@ -72,7 +72,7 @@ export default class Draw {
                 // tooltip.setVisible(false);
             });
             handler.activate();
-        };
+        }
         var ps = [];
         function rasterVectorEntityHandler(chooseDrawMode){
             viewer.enableCursorStyle = false;
@@ -114,7 +114,7 @@ export default class Draw {
                 // tooltip.setVisible(false);
                 $('body').removeClass('drawCur');
             }, Cesium.ScreenSpaceEventType.RIGHT_CLICK);
-        };
+        }
 
     }
 
