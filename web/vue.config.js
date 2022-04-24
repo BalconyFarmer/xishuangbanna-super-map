@@ -4,7 +4,11 @@
  */
 const webpack = require('webpack');
 
+const BASE_URL = process.env.NODE_ENV === "production" ? "/" : "/";
+
 module.exports = {
+    publicPath: BASE_URL,
+
     lintOnSave: false,
     devServer: {
         disableHostCheck: true
