@@ -4,10 +4,10 @@
  */
 const webpack = require('webpack');
 
-const BASE_URL = process.env.NODE_ENV === "production" ? "/" : "/";
+// const BASE_URL = process.env.NODE_ENV === "production" ? "/" : "/";
 
 module.exports = {
-    publicPath: BASE_URL,
+    // publicPath: BASE_URL,
 
     lintOnSave: false,
     devServer: {
