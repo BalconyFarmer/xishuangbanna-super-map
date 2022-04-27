@@ -348,7 +348,7 @@ export default {
                                     arr.push(item1.lat)
                                 })
                                 if (arr.length) {
-                                    self.superApp.entities.addLineReal(arr)
+                                    self.superApp.entities.addLineReal(arr,item)
                                 }
                                 console.log(arr, "++++++++++++")
                             })

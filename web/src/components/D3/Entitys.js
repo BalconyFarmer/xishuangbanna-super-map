@@ -480,14 +480,39 @@ export default class Entities {
         return [_a, _b]
     }
 
-    addLineReal(arr) {
+    addLineReal(arr, allData) {
         const _a = this.app.viewer.entities.add({ // 用于打底的线
             polyline: {
                 positions: Cesium.Cartesian3.fromDegreesArray(arr),
-                width: 15, // 线的宽度，像素为单位
+                width: 5, // 线的宽度，像素为单位
                 material: Cesium.Color.RED,
-                clampToGround: true
-            }
+                clampToGround: true,
+                allData: allData,
+            },
         });
+
+        const result = this.app.viewer.entities.add({
+            allData: allData,
+            position: Cesium.Cartesian3.fromDegreesArray([allData.lineGisJosn[0].lng,allData.lineGisJosn[0].lat])[0],
+
+            // 文字
+            label: {
+                text: (allData.typeDesc),
+                fillColor: this.app.Cesium.Color.WHITE,
+                backgroundColor: this.app.Cesium.Color.BLACK.withAlpha(0.5),
+                showBackground: true,
+                outline: false,
+                outlineColor: this.app.Cesium.Color.BLACK,
+                outlineWidth: 10,
+                scale: 0.5,
+                style: this.app.Cesium.LabelStyle.FILL_AND_OUTLINE,
+                verticalOrigin: this.app.Cesium.VerticalOrigin.CENTER,
+                horizontalOrigin: this.app.Cesium.HorizontalOrigin.CENTER,
+                pixelOffset: new this.app.Cesium.Cartesian2(0, -40),
+                show: true,
+                clampToGround: true,
+
+            }
+        })
     }
 }
