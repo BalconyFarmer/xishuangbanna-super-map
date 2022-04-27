@@ -25,6 +25,7 @@
     "file-saver": "^2.0.5",
     "node-sass": "^4.14.1",
     "photo-sphere-viewer": "^4.5.3",
+    "rebuild": "^0.1.2",
     "three": "^0.138.3",
     "vue": "^2.6.11",
     "vuedraggable": "^2.24.3"

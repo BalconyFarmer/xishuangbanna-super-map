@@ -75,3 +75,25 @@ export function getAllJinggaiByType(params) {
 //         },
 //     })
 // }
+
+export function tt(params) {
+    return axios({
+        method: "post",
+        url: "http://59.216.89.250/banna-gis-api/api/gis/v1/auth/account",
+        data: params,
+        headers: {
+            'Authorization': 'Basic ' + "ZGVza3RvcDphZWU3OWQ5NS03ZDNlLTQ0ZDctYjA4MC0zOTQxYmYxMTIxMjA=",
+        },
+    })
+}
+
+let formData = new FormData();
+//参数
+formData.append("account","15214087452");
+formData.append("password","Bjz123456");
+
+tt(formData).then(res => {
+    const see = res.data
+    console.log(see)
+    debugger
+})
