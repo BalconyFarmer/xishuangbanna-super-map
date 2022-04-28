@@ -51,11 +51,11 @@
                         <div class="icon icon7"></div>
                         <span>网格</span>
                     </div>
-<!--                    <div :class="[menusList.indexOf('防控点') != -1 ?'active':'disAcitve']" class="menu11"-->
-<!--                         @click="handleRightMenus('防控点')">-->
-<!--                        <div class="icon icon8"></div>-->
-<!--                        <span>防控点</span>-->
-<!--                    </div>-->
+                    <!--                    <div :class="[menusList.indexOf('防控点') != -1 ?'active':'disAcitve']" class="menu11"-->
+                    <!--                         @click="handleRightMenus('防控点')">-->
+                    <!--                        <div class="icon icon8"></div>-->
+                    <!--                        <span>防控点</span>-->
+                    <!--                    </div>-->
                     <div :class="[menusList.indexOf('防控段') != -1 ?'active':'disAcitve']" class="menu11"
                          @click="handleRightMenus('防控段')">
                         <div class="icon icon9"></div>
@@ -122,9 +122,9 @@
         </div>
 
         <div id="tooltip">
-            <div>{{ entityName }}</div>
-            <div v-if="hoverMsg">{{ hoverMsg.name }}</div>
-            <div v-if="hoverMsg">{{ hoverMsg.gisJson.toString() }}</div>
+            <div v-for="item in hoverMsg">
+                {{ item }}
+            </div>
         </div>
 
         <el-dialog
@@ -188,7 +188,6 @@ export default {
             input: "",
             state1: '',
             checkList: ['选中且禁用', '复选框 A'],
-            entityName: null,
             superApp: null,
             showTools: true,
             addDialogVisible: false,
@@ -215,7 +214,7 @@ export default {
             restaurants: [
                 {"value": "暂无数据", "address": "暂无数据"},
             ],
-            hoverMsg: null
+            hoverMsg: []
         }
     },
     //自定义指令
@@ -359,13 +358,11 @@ export default {
                             })
                         } else if (menuList.indexOf(type) != -1) {
                             res.data.forEach((item, index) => {
-                                if (index < 100) {
-                                    let arr = []
-                                    arr[0] = item.gisJson[1]
-                                    arr[1] = item.gisJson[0]
-                                    arr[2] = 0
-                                    self.superApp.entities.addIcon1(arr, iconURL, type, "vr", item)
-                                }
+                                let arr = []
+                                arr[0] = item.gisJson[1]
+                                arr[1] = item.gisJson[0]
+                                arr[2] = 0
+                                self.superApp.entities.addIcon1(arr, iconURL, type, "vr", item)
                             })
                         } else {
                             res.data.forEach((item, index) => {
@@ -448,20 +445,42 @@ export default {
 
         this.superApp.eventCenter.addEventListener('hoverE', function (data) {
             if (data.message.en) {
-                self.hoverMsg = data.message.en.allData
+
+                let menuList = ['机场', '酒店', '超市', '餐饮', '查缉点', '防控点', '出租房', '医院', '学校', '银行', '公司', '候车站', '旅游景点',]
+
+                if (menuList.indexOf(data.message.en.allData.typeDesc) != -1) {
+                    self.hoverMsg[0] = "名称:" + data.message.en.allData.typeDesc
+                    self.hoverMsg[1] = data.message.en.allData.name
+                    self.hoverMsg[2] = data.message.en.allData.gisJson
+                } else if (data.message.en.allData.propertiesDesc == "网格") {
+                    self.hoverMsg[0] = "名称:" + data.message.en.allData.name
+                    self.hoverMsg[1] = data.message.en.allData.typeDesc
+                    self.hoverMsg[2] = data.message.en.allData.shortName
+                    self.hoverMsg[3] = data.message.en.allData.gridRange
+                } else if (data.message.en.allData.typeDesc == "防控段") {
+                    self.hoverMsg[0] = "名称:" + data.message.en.allData.name
+                    self.hoverMsg[1] = data.message.en.allData.shortName
+                    self.hoverMsg[2] = data.message.en.allData.typeDesc
+                } else {
+                    self.hoverMsg[0] = "名称:" + data.message.en.allData.name
+                    self.hoverMsg[1] = data.message.en.allData.remarks
+                    self.hoverMsg[2] = data.message.en.allData.dynamicData
+                }
+
+
+                self.$forceUpdate();
                 dom.style.display = "block"
                 dom.style.left = data.message.position.startPosition.x + 10 + "px"
                 dom.style.top = data.message.position.startPosition.y + 10 + "px"
-                self.entityName = data.message.en.name
             } else {
                 dom.style.display = "none"
             }
         })
         this.superApp.eventCenter.addEventListener('hideToolTip', function (data) {
             dom.style.display = "none"
-            self.hoverMsg = null
-            self.entityName = null
+            self.hoverMsg = []
         })
+
         self.superApp.eventCenter.addEventListener('pickEntity', function (data) {
             if (data.message.en.id.type == "vr") {
                 self.dialogVisible = true
@@ -763,6 +782,16 @@ export default {
     top: 0;
     background-image: url("../assets/layer_border.png");
     background-size: 100% 100%;
+    font-size: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+
+    div {
+        border-bottom: 1px solid grey;
+    }
 }
 
 .vide {
