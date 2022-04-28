@@ -485,6 +485,7 @@ export default class Entities {
         let color = Cesium.Color.fromRandom()
         const _a = this.app.viewer.entities.add({ // 用于打底的线
             name:type,
+            allData: allData,
             polyline: {
                 positions: Cesium.Cartesian3.fromDegreesArray(arr),
                 width: 5, // 线的宽度，像素为单位
@@ -529,12 +530,12 @@ export default class Entities {
         let color = Cesium.Color.fromRandom()
         const _a = this.app.viewer.entities.add({ // 用于打底的线
             name:type,
+            allData: allData,
             polyline: {
                 positions: Cesium.Cartesian3.fromDegreesArray(arr),
                 width: 5, // 线的宽度，像素为单位
                 material: color,
                 clampToGround: true,
-                allData: allData,
             },
         });
 

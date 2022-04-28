@@ -443,8 +443,9 @@ export default {
 
             this.restaurants = []
             this.superApp.viewer.entities.values.forEach(item => {
+                // debugger
                 this.restaurants.push({
-                    value: item.name,
+                    value: item.allData.name,
                     address: item
                 })
             })
