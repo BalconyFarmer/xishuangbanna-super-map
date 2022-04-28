@@ -137,25 +137,25 @@
                     <div class="item">
                         <div>标注类型</div>
                         <div>
-                            <el-input v-model="input" placeholder="请输入内容"></el-input>
+                            <el-input v-model="clickMsg[0]" placeholder="请输入内容"></el-input>
                         </div>
                     </div>
                     <div class="item">
                         <div>点位名称</div>
                         <div>
-                            <el-input v-model="input" placeholder="请输入内容"></el-input>
+                            <el-input v-model="clickMsg[1]" placeholder="请输入内容"></el-input>
                         </div>
                     </div>
                     <div class="item">
                         <div>经度</div>
                         <div>
-                            <el-input v-model="input" placeholder="请输入内容"></el-input>
+                            <el-input v-model="clickMsg[2]" placeholder="请输入内容"></el-input>
                         </div>
                     </div>
                     <div class="item">
                         <div>纬度</div>
                         <div>
-                            <el-input v-model="input" placeholder="请输入内容"></el-input>
+                            <el-input v-model="clickMsg[3]" placeholder="请输入内容"></el-input>
                         </div>
                     </div>
                 </div>
@@ -163,7 +163,7 @@
                 <div class="beizhu">
                     <div>备注</div>
                     <div>
-                        <el-input v-model="input" placeholder="请输入内容"></el-input>
+                        <el-input v-model="clickMsg[4]" placeholder="请输入内容"></el-input>
                     </div>
                 </div>
             </div>
@@ -214,7 +214,8 @@ export default {
             restaurants: [
                 {"value": "暂无数据", "address": "暂无数据"},
             ],
-            hoverMsg: []
+            hoverMsg: [],
+            clickMsg: []
         }
     },
     //自定义指令
@@ -482,10 +483,43 @@ export default {
         })
 
         self.superApp.eventCenter.addEventListener('pickEntity', function (data) {
-            if (data.message.en.id.type == "vr") {
+
+            let menuList = ['机场', '酒店', '超市', '餐饮', '查缉点', '防控点', '出租房', '医院', '学校', '银行', '公司', '候车站', '旅游景点',]
+
+            if (menuList.indexOf(data.message.en.id.allData.typeDesc) != -1) {
+                self.clickMsg[0] = data.message.en.id.allData.typeDesc
+                self.clickMsg[1] = data.message.en.id.allData.name
+                self.clickMsg[2] = data.message.en.id.allData.gisJson[1]
+                self.clickMsg[3] = data.message.en.id.allData.gisJson[0]
+                self.clickMsg[4] = ""
                 self.dialogVisible = true
+
+            } else if (data.message.en.id.allData.propertiesDesc == "网格") {
+                self.clickMsg[0] = data.message.en.id.allData.name
+                self.clickMsg[1] = data.message.en.id.allData.shortName
+                self.clickMsg[2] = data.message.en.id.allData.gisJosn[0][1]
+                self.clickMsg[3] = data.message.en.id.allData.gisJosn[0][0]
+                self.clickMsg[4] = data.message.en.id.allData.region
+                self.dialogVisible = true
+
+            } else if (data.message.en.id.allData.typeDesc == "防控段") {
+                self.clickMsg[0] = data.message.en.id.allData.typeDesc
+                self.clickMsg[1] = data.message.en.id.allData.shortName
+                self.clickMsg[2] = data.message.en.id.allData.lineGisJosn[0].lng
+                self.clickMsg[3] = data.message.en.id.allData.lineGisJosn[0].lat
+                self.clickMsg[4] = data.message.en.id.allData.name
+                self.dialogVisible = true
+
             } else {
+                self.clickMsg[0] = data.message.en.id.allData.remarks
+                self.clickMsg[1] = data.message.en.id.allData.name
+                self.clickMsg[2] = data.message.en.id.allData.gisJosn[1]
+                self.clickMsg[3] = data.message.en.id.allData.gisJosn[0]
+                self.clickMsg[4] = JSON.stringify(data.message.en.id.allData)
+                self.dialogVisible = true
+
             }
+
         })
 
         this.kmtl = new KMTL(this.superApp)
