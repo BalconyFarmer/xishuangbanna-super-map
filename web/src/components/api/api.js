@@ -49,7 +49,6 @@ data8.data.forEach(item => {
 console.log(allData, "++++++++")
 
 
-
 export function getAllJinggaiByType(params) {
     return new Promise((resolve, reject) => {
         let list = {}
@@ -76,7 +75,12 @@ export function getAllJinggaiByType(params) {
 //     })
 // }
 
-export function tt(params) {
+/**
+ * 登陆
+ * @param params
+ * @returns {*}
+ */
+export function login(params) {
     return axios({
         method: "post",
         url: "http://59.216.89.250/banna-gis-api/api/gis/v1/auth/account",
@@ -89,11 +93,93 @@ export function tt(params) {
 
 let formData = new FormData();
 //参数
-formData.append("account","15214087452");
-formData.append("password","Bjz123456");
+formData.append("account", "15214087452");
+formData.append("password", "Bjz123456");
 
-tt(formData).then(res => {
-    const see = res.data
-    console.log(see)
-    debugger
+const token = null
+login(formData).then(res => {
+    const see = res.data.access_token
+    token = see
+    console.log(see,"登陆成功")
+
+})
+
+/**
+ * 获取所有段信息1
+ */
+export function getAllLines() {
+    return axios({
+        method: "get",
+        url: "http://59.216.89.250/banna-gis-api/api/gis/v1/boundary-org/config/border-organization/all-line",
+        headers: {
+            'Authorization': 'Bearer ' + token,
+        },
+    })
+}
+
+getAllLines().then(res => {
+    console.log(res.data, "获取所有段信息1++++++")
+})
+
+/**
+ * 获取所有点2
+ */
+export function getAllPoint() {
+    return axios({
+        method: "get",
+        url: "http://59.216.89.250/banna-gis-api/api/gis/v1/boundary-org/config/border-organization/all-point",
+        headers: {
+            'Authorization': 'Bearer ' + token,
+        },
+    })
+}
+
+getAllPoint().then(res => {
+    console.log(res.data, "获取所有点2++++++")
+})
+
+/**
+ * 获取所有网格3
+ */
+export function getAllmapscope() {
+    return axios({
+        method: "post",
+        url: "http://59.216.89.250/banna-gis-api/api/gis/v1/grid/gis/search/map-scope",
+        body: {
+            "mapType": 4,
+            "scopeCoordinates": [
+                {"lat": 22.542572021484364, "lng": 100.06210327148443},
+                {"lat": 22.542572021484364, "lng": 101.93527221679695},
+                {"lat": 21.255798339843736, "lng": 101.93527221679695},
+                {"lat": 21.255798339843736, "lng": 100.06210327148443}]
+        },
+        headers: {
+            'Authorization': 'Bearer ' + token,
+        },
+    })
+}
+
+getAllmapscope().then(res => {
+    console.log(res.data, "获取所有网格3++++++")
+})
+
+/**
+ * 获取通用4
+ */
+export function getAllNormals() {
+    return axios({
+        method: "get",
+        url: "http://59.216.89.250/banna-gis-api/api/gis/v1/point/common-point-record",
+        params: {
+            limit: 6000,
+            page: 1
+        },
+        headers: {
+            'Authorization': 'Bearer ' + token,
+        },
+    })
+}
+
+getAllNormals().then(res => {
+    console.log(res.data, "获取通用4++++++")
 })
