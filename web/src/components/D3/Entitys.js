@@ -481,11 +481,13 @@ export default class Entities {
     }
 
     addLineReal(arr, allData) {
+
+        let color = Cesium.Color.fromRandom()
         const _a = this.app.viewer.entities.add({ // 用于打底的线
             polyline: {
                 positions: Cesium.Cartesian3.fromDegreesArray(arr),
                 width: 5, // 线的宽度，像素为单位
-                material: Cesium.Color.RED,
+                material: color,
                 clampToGround: true,
                 allData: allData,
             },
@@ -498,17 +500,17 @@ export default class Entities {
             // 文字
             label: {
                 text: (allData.typeDesc),
-                fillColor: this.app.Cesium.Color.WHITE,
-                backgroundColor: this.app.Cesium.Color.BLACK.withAlpha(0.5),
+                fillColor: color,
+                backgroundColor: this.app.Cesium.Color.WHITE.withAlpha(0.9),
                 showBackground: true,
                 outline: false,
                 outlineColor: this.app.Cesium.Color.BLACK,
-                outlineWidth: 10,
+                outlineWidth: 5,
                 scale: 0.5,
                 style: this.app.Cesium.LabelStyle.FILL_AND_OUTLINE,
                 verticalOrigin: this.app.Cesium.VerticalOrigin.CENTER,
                 horizontalOrigin: this.app.Cesium.HorizontalOrigin.CENTER,
-                pixelOffset: new this.app.Cesium.Cartesian2(0, -40),
+                pixelOffset: new this.app.Cesium.Cartesian2(0, -20),
                 show: true,
                 clampToGround: true,
 
