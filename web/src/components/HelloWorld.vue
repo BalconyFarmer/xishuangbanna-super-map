@@ -314,27 +314,21 @@ export default {
         handleRightMenus(type) {
             if (this.menusList.indexOf(type) != -1) {
                 this.menusList.splice(this.menusList.indexOf(type), 1)
-
                 let _arr = []
-
                 this.superApp.viewer.entities.values.forEach(item => {
                     if (item.name == type) {
                         _arr.push(item)
                     }
                 })
-
                 _arr.forEach(item => {
                     this.superApp.viewer.entities.remove(item)
                 })
                 this.updateRes()
-
             } else {
                 this.menusList.push(type)
                 const self = this
                 getAllJinggaiByType(type).then(res => {
-                        // debugger
                         let menuList = ['机场', '酒店', '超市', '餐饮', '查缉点', '防控点', '出租房', '医院', '学校', '银行', '公司', '候车站', '旅游景点',]
-                        // let menuList = ["机场", "酒店", "超市", "餐饮", "查缉点", "防控点", "出租房", "医院", "学校", "银行", "公司", "候车站", "旅游景点",]
                         let iconURL = null
                         if (menuList.indexOf(type) != -1) {
                             iconURL = 'd3/icons/' + "坐标-fill.png"
