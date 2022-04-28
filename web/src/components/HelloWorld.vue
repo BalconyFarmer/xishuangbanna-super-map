@@ -350,7 +350,7 @@ export default {
                                     arr.push(item1.lat)
                                 })
                                 if (arr.length) {
-                                    self.superApp.entities.addLineReal(arr, item)
+                                    self.superApp.entities.addLineReal(arr, item, "防控段")
                                 }
                             })
                         } else if (type == "网格") {
@@ -361,7 +361,7 @@ export default {
                                     arr.push(item1[0])
                                 })
                                 if (arr.length) {
-                                    self.superApp.entities.addLineRealGrid(arr, item)
+                                    self.superApp.entities.addLineRealGrid(arr, item,"网格")
                                 }
                             })
                         } else if (menuList.indexOf(type) != -1) {

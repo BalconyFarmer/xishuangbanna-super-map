@@ -480,10 +480,11 @@ export default class Entities {
         return [_a, _b]
     }
 
-    addLineReal(arr, allData) {
+    addLineReal(arr, allData,type) {
 
         let color = Cesium.Color.fromRandom()
         const _a = this.app.viewer.entities.add({ // 用于打底的线
+            name:type,
             polyline: {
                 positions: Cesium.Cartesian3.fromDegreesArray(arr),
                 width: 5, // 线的宽度，像素为单位
@@ -496,7 +497,7 @@ export default class Entities {
         const result = this.app.viewer.entities.add({
             allData: allData,
             position: Cesium.Cartesian3.fromDegreesArray([allData.lineGisJosn[0].lng,allData.lineGisJosn[0].lat])[0],
-
+            name:type,
             // 文字
             label: {
                 text: (allData.typeDesc),
@@ -523,10 +524,11 @@ export default class Entities {
      * @param arr
      * @param allData
      */
-    addLineRealGrid(arr, allData) {
+    addLineRealGrid(arr, allData,type) {
 
         let color = Cesium.Color.fromRandom()
         const _a = this.app.viewer.entities.add({ // 用于打底的线
+            name:type,
             polyline: {
                 positions: Cesium.Cartesian3.fromDegreesArray(arr),
                 width: 5, // 线的宽度，像素为单位
@@ -539,6 +541,7 @@ export default class Entities {
         const result = this.app.viewer.entities.add({
             allData: allData,
             position: Cesium.Cartesian3.fromDegreesArray([allData.gisJosn[0][1],allData.gisJosn[0][0]])[0],
+            name:type,
 
             // 文字
             label: {
