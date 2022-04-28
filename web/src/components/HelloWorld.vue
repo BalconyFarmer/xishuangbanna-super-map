@@ -51,11 +51,11 @@
                         <div class="icon icon7"></div>
                         <span>网格</span>
                     </div>
-                    <div :class="[menusList.indexOf('防控点') != -1 ?'active':'disAcitve']" class="menu11"
-                         @click="handleRightMenus('防控点')">
-                        <div class="icon icon8"></div>
-                        <span>防控点</span>
-                    </div>
+<!--                    <div :class="[menusList.indexOf('防控点') != -1 ?'active':'disAcitve']" class="menu11"-->
+<!--                         @click="handleRightMenus('防控点')">-->
+<!--                        <div class="icon icon8"></div>-->
+<!--                        <span>防控点</span>-->
+<!--                    </div>-->
                     <div :class="[menusList.indexOf('防控段') != -1 ?'active':'disAcitve']" class="menu11"
                          @click="handleRightMenus('防控段')">
                         <div class="icon icon9"></div>
@@ -335,7 +335,6 @@ export default {
                         } else {
                             iconURL = 'd3/icons/' + type + ".png"
                         }
-
                         if (type == "防控段") {
                             res.data.forEach(item => {
                                 let arr = []
@@ -355,49 +354,36 @@ export default {
                                     arr.push(item1[0])
                                 })
                                 if (arr.length) {
-                                    self.superApp.entities.addLineRealGrid(arr, item,"网格")
+                                    self.superApp.entities.addLineRealGrid(arr, item, "网格")
                                 }
                             })
                         } else if (menuList.indexOf(type) != -1) {
                             res.data.forEach((item, index) => {
-
                                 if (index < 100) {
                                     let arr = []
-
                                     arr[0] = item.gisJson[1]
                                     arr[1] = item.gisJson[0]
                                     arr[2] = 0
-
                                     self.superApp.entities.addIcon1(arr, iconURL, type, "vr", item)
                                 }
                             })
                         } else {
                             res.data.forEach((item, index) => {
-
-                                if (index < 100) {
-                                    let arr = []
-
-                                    if (type == "拦阻桩" || type == "界碑界桩" || type == "桥梁" || type == "摄像头" || type == "码头") {
-                                        arr[0] = item.gisJosn[1]
-                                        arr[1] = item.gisJosn[0]
-                                        arr[2] = 0
-                                    }
-
-                                    if (type == "防控点") {
-                                        arr[0] = item.pointJosn.lng
-                                        arr[1] = item.pointJosn.lat
-                                        arr[2] = 0
-                                    }
-
-                                    self.superApp.entities.addIcon1(arr, iconURL, type, "vr", item)
+                                let arr = []
+                                if (type == "拦阻桩" || type == "界碑界桩" || type == "桥梁" || type == "摄像头" || type == "码头") {
+                                    arr[0] = item.gisJosn[1]
+                                    arr[1] = item.gisJosn[0]
+                                    arr[2] = 0
                                 }
+                                if (type == "防控点") {
+                                    arr[0] = item.pointJosn.lng
+                                    arr[1] = item.pointJosn.lat
+                                    arr[2] = 0
+                                }
+                                self.superApp.entities.addIcon1(arr, iconURL, type, "vr", item)
                             })
                         }
-
-
                         self.updateRes()
-
-
                     }
                 )
             }
