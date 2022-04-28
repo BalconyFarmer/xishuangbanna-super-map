@@ -1,0 +1,85 @@
+{
+    "ts": "2022-04-28 15:37:14",
+    "code": 0,
+    "desc": "成功",
+    "ex": null,
+    "data": [
+        {
+            "createdDate": "2021-06-09 17:17:01",
+            "lastModifiedDate": "2021-08-31 02:04:56",
+            "id": "23062a3a-f589-4cea-a5c8-8bd65a9cd30b",
+            "name": "拦阻桩",
+            "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAABTCAMAAAA7rqAMAAAAZlBMVEVHcEz///////////////////////////////////////////////////////////+b1Mr///+h183m9PK039f5/PzN6eTA5N7Z7+vs9/Wn2dC64dqt3NTy+vjT7OjH5+Hg8u6Rx73wXOjfAAAAEHRSTlMAMGAgoEDAENDw4IBQcLCQ2RsGKgAAAAlwSFlzAAALEgAACxIB0t1+/AAABGNJREFUWIXFmdmSoyAUhk1iXJJ0wqIo7vP+LzmFB5TVJT1V81+kKmn8PBtwoKP/odvrGSdJjnGeJO/n6/ZLE9JX/MC0ZlUxq2U1xXl8Tb8G3mPMWYEsFYzj+P4V8JqVQ2PzQA3rH9fzFj76ys8DVf3jdQqYvstNoFBVJidS9coHskdEiAz5Ye/jUs8JaRnleBanrNXfVfTxoeSnGV8fIxXFlvio/ZlmB5hpVq+ZrW0eqF4roX5c9oi3vN4DYgPK8h2mZiMrw0SMMVPjxnzT95XYODF0YqoMrTfjGVM5rNs2cVbZysHTO0z86WUyq32gkJwOhP+EU9OdIi7MDodSlLCTxIXJMj/xKt0+EsdF0i+/6+kDwk36E0RcghmFt5KeMtvTGSLG8in69CBzWCvac0QVTp+ZV/6F23h1nbrRzOBt7CxRTc3qYRNv8DJyONvlwKhhZmnX5k+tlyR1a6ltje+lqB65VI0w1T9+v+XyXSDWmTGorBkwoIYhBIHvIa+W5ymerW+UkQWm6osiIqTb2aEJt2hQX4Swubu9IN+jCjjDmKCFUHbO+oQQxrUyfICcm5vbE0JJld9UfoDRy2ZD1DwQfsCHENgzmMFMRoT+iDe7SLNFaHsPEqJWJWZ25qmjRoyCNn9g6rQIFXeR8HRuICHCKqdMlEeBhqHyNkVNNQyCNqnYQxkRbCKNqTOnx2nZTBVymHxgTvkGkqJuWV1DqqCQQBMg9RbxjvWEi3BPsoCD4pgighcbdpGDKJdNzwtRWmwDebOQwuti3EKOhT5DPUgZS61j2e8GibYGSKSxFkGx6gtFWbcbVFIM+sLkyzjsEiM2FXTdHjgjOxOZtEibPYulATudhRpmjzkh4/k9xBop682R0yXOk4yZrdEPBJjbY1sf0XZGlnBt7ruXcv51sAf7XHf3J1gZe+t8BR2Wu4lTF+l2nrMvjZmdKIohu+4uPthEd1sGD0e7y5SdgWcbt5YPT1sHfnP7EJSC5437gMn0NYoNPOl0MDG8y3eKYCvR14zAgyy2idEFktv42g0qF3f/maCBMvCcp2UP7G+KprEoKn+bKB9LXGJ0lzXolPu2ehI0cjGzO4fswkaKdbgJJjUoKOfGb2QUfeRU2Tg72pKHuclNN0gdAI4zJbENHyPvZXOKWat1ZOOaQ7l+rL9W05+G3J6VqWHtboe9XKiw7ZuDW64W3b3Ts5pRqNg7499Veyqugg6YiLqtQIKu2kIegvZsbWK571hmKdYuYFDrmdeTttoRvpkaJYOJSDtoUeV1ZexGfOPCQNeb25tYA5eNTgO7fa2hybh82tJh4lEmOUF04ukn8lNEwQxch67EQ7nW9Vlr3qeuP00UNe9tiEBFef7iVszNnIWIY37u1nbRLZu8SSJ1tnvDGFIa956Advz9/cV6FF1zp7muyuAN2zFdLOfJ9L3Ti5565ovy8xunlVZDyfD47j8JPkPl3cY/MRF0SWjT0H8QRV3XPP9lol2lx3yOougvbQIaHrzgHxgAAAAASUVORK5CYII=",
+            "remarks": "拦阻报警【全州】",
+            "status": "01",
+            "imgFile": "00",
+            "dynamicAttribute": [
+                "位置",
+                "相关介绍"
+            ],
+            "statusDesc": "立即生效"
+        },
+        {
+            "createdDate": "2021-06-09 17:14:36",
+            "lastModifiedDate": "2021-08-31 02:05:06",
+            "id": "3fc7a173-9b33-4c1f-bda2-b3c4601cad30",
+            "name": "界碑界桩",
+            "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFYAAABWCAMAAABiiJHFAAAAY1BMVEVHcEz////////////////////////////////////////////////////////////GnG3////x5trizbbJonbUtJH7+fbbwaP48+307OTRrojq2sjm1L/Yu5rNqH/t4NHfx60cvu4dAAAAEHRSTlMAMNBQQIBg8BDgoLDAIJBwZmsVhwAAAAlwSFlzAAALEgAACxIB0t1+/AAABANJREFUWIXVmVuXsjoMhhF1gPFEWtpSDsL//5V7YVOOPSHzXez3ZtYa5TEmaZrEKFCPi1Lo+/26XO8ZAAAh5fDn/vvzOIpMf27AO8qqHFUw0UjInqcjdt5A9iNxUtHWPHul30HPMW/eWyZaLWRy/QJ8uXNa2KAfMZJcd0LTJ3igH7DMdqXGJSPbr8/Y9n+UP8OpV+jnz75FQzgoyY6y+WuVjEPT7ZfPov9uSliJd+0MXCdByZbGcvIqI2um0jycIvnZR7VBYQkW4OXOqEVnhw4q24l79vl1pLbcTQWAuhj94PbvtdTvbLzQIS90bPvEdeLOOgeKOoQKMOZMd3c4NhFIlWFUAK6fKO0H+dbhZwdTAQDtZWBz75mjYwM9sPRDY3NDhke230MFwCgX3Jy9PyUec9OzhA6qyeYkAwC6TmRmYwU630TNBfmImj4Tz0VpMlcba3yQ6H8bX8WYGM2NlbFvo//cWGiURXx7hk/4keYs8GBBFfjmtsE+a4exXmyDwd4c4ay1e9aPxa+6CdoJMJrfYUGYvfAiqhpanvJiVe6yZIW9UWc59GJBeWFdGDLm8kEAVoVGLp2bqk8rbA/5sSoX6mV5vABWt6+xKjZ0WcYuxJVeIViuQr7EXon7AvNjwZQKiLX2BQFYpry4xNb/Bkv/V9b+I98ex1aGTDiet2DKWzxl1qvcj1U3IV1VRlUTDh/eVU3ACnag1KgMlatLEuutrfkiOS0/fcLQLhjfpAorrOaTlyFmvWFiUh0Ko2TVVHPz7YB3WbU1wKZK1DOz1XFqfldYffPKEGzFlKopz1vzzav7BLHBYvNl8igZsSV+102fcMJrZ+YzNaDaD8AM21t8EEVxvwka7wOxHE0yDNbYMS77UFKssOgRUg/trtBY1XyYG1zsb5cdCG/fbAAMIRIUpdnaAplbAjYz117GrKocxk7tuH98XIriY5bJV0861oJjFo4ONDZTo+iOXbXYQ8Uh+Q3W/cpDH6yggXdBzYlju/Iq9w58mtpnrln6Xue7/KCpld0FHzfoYTpknTAtFArp2YiNo3/+9uavns7dY7/StKjIe7fB3VjkqdOxStNaJS+oHUymauxbqXyUxvX4QF5Qc9tfz0p85V0Abbl5zjb7tU7M14+V7dCu9UgW3Dx/t7QjhIMkpOlXV1HFg9eipzXXroobboTD3F3UYO5OahSdsgDuDr9qpXHnWzeL0BxYcqWbG7RgNWixHt4ocB1s0GsqJmsVJHh5vdUlaSzBKn+//DXjo0dMTA7u4XUAOujJ2zW06LIjP+konZNmaTA75gCt9CZnGVE0SVAdDNAroZOpt78wVelxK9kfm6p0Tuoib//Gq3OlTy7jP/wpctQptAREUfQfbhYzl8I4WawAAAAASUVORK5CYII=",
+            "remarks": "全州界碑界桩",
+            "status": "01",
+            "imgFile": "01",
+            "dynamicAttribute": [
+                "界碑位置",
+                "树立年份"
+            ],
+            "statusDesc": "立即生效"
+        },
+        {
+            "createdDate": "2021-06-09 17:18:07",
+            "lastModifiedDate": "2021-08-31 02:07:27",
+            "id": "64d31d10-ec96-46fa-9d2c-89f6cd2bc064",
+            "name": "桥梁",
+            "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFUAAABVCAMAAAAPK1hoAAAAY1BMVEVHcEz///////////////////////////////////////////////////////////////9wtp+32s94uqX2+vmKw7HJ5Nvk8e2TyLfb7eel0cPA39WBv6uczb2u1snt9vPS6OGLYLF0AAAAEHRSTlMAIOBAoMCQENDwMGCAUHCwCmvMAQAAAAlwSFlzAAALEgAACxIB0t1+/AAABAVJREFUWIWtmemaqyAMhql1rV1QWaRuc/9XeZ6egLIqdub7NzZ9G5MQAoMiVFyf9zz7KL8/r0XMVw5U1GmCiWAtiAmCk7T+FbmoX5gPU9fo6qaB49fX4EteLfPY+DTOS5VfvvEzxaL3IkG9wOlpf++VoDvMj6io7qeYt3LZ83P1dylv8dAnHiy3JlkDk/kCXYufkcwiJbqjtBVYl2h1ck/ioluUvNOcWbCrpdUseBmBLUq2fmVkHiSIrSXXsWNsUTItaHva/D3EatDe9+66tjI5wr64stx3FNQqY/7ag94X+VqdiIBiLJT5srMeroSqxEZBMVblQsk1GNRkPgndsHMSCm0uTkM3rMgD749lDf6cgGL8I2sb+2OQtfHZ16W+lvlTBe9CT0IxhhR33oQpV82gEuquWkaJ8TcPO3uTrs4WtGlsLPsUkvFkls66zTZl8iMbamMZ1KdhBg6x1KFW1E2VWhTMhtpYCB6tbOhjAWuPsYFdm4/58/BsedgBgD3lbYbwrRiqhH/UA6/hYIeg6r0L4G151vqh8td6KwQ3DLnCtiYvdXLsIF/YrIJaeF3YFo7/T/ulRG1Q88FJ9jkqZHEwW0w2e9bVGSqsr9lcXgkkyzGOpkJe+sSg4j7QWKKp/xdMj01qBw+/p/ZQQya1+RNq46POrnE0dQ5SPcbR1DZIdZdMPHXyUcc/ietoUfs/oVqVVfb+5hJPhdIszRUL5sQxjqVC37Y2xDt0B3dmi6VCz2PmEPfgAetYKnzAzS3mAnFxG0EslUJerPNiMvkDG0mFsE5my0Iol23XslYTn0V1pkbZ9O258AG/Rv1QZze0sTA4EHvnViEQXug6U6i5w8IKfwAQyuXmqxvPNlTDGv1NbvvuYHyRM7Hh7NuGrlhjNwZXR7sC0Da+mZF9OyMVYM0tHn7IM7xtzg4WltrVRqgFHcKubrOmmd7W7Q3ELFcenDPBWeqG8Vgy0NTvKkJ3eTJy56I9yQFPhE6H6ynuDFZCw6c4dCXjWayEjuET53Y6jMaq+TZ0MoQYlGqhTzEpI5NqE/sXBLdKGdLjwyxXq3eqDi6g6nWhH54817MIJfU+FKGcx1zmGNc5fC+oUi/t4inI3ZhNt389IqVd6Hy+M7vx5bN+dxpx8YQc7P8LV7F2bWFfx0ZCXSyw+77v3MfR0E99ebBesaOaMrBJHJYlJ6CBIPzm9RVWeKJoqBNnoQgVGd/Hdjz75h4+JXs325T4d5RDPck7CH2T2KtnR9dqCECHaqdLH+niz1knym/+BbEpJ+4Vf08imtS+Hk4UhsoZ/c6ryLheC/S7gnL1rNa237TV17m3dVHuUp79Lk2m6mromm6oDjeocypS0kb+c+SUrmlk4SOE/gF/bCwS16uvEwAAAABJRU5ErkJggg==",
+            "remarks": "全州桥梁",
+            "status": "01",
+            "imgFile": "00",
+            "dynamicAttribute": [
+                "位置",
+                "描述",
+                "长度",
+                "宽度",
+                "建设年份"
+            ],
+            "statusDesc": "立即生效"
+        },
+        {
+            "createdDate": "2021-06-09 17:08:37",
+            "lastModifiedDate": "2021-08-31 02:07:16",
+            "id": "ce1d9d18-effd-46f5-ab3a-30b51887bf32",
+            "name": "摄像头",
+            "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFUAAABVCAMAAAAPK1hoAAAAY1BMVEVHcEz///////////////////////////////////////////////////////////////86SVhGVGJrdoGcpKva3eDz9PW1usDO0dVea3eDjZZSX2yor7bm6Op3gYyQmKHBxsu0rCLvAAAAEHRSTlMAIOBAoMCQENDwMGCAUHCwCmvMAQAAAAlwSFlzAAALEgAACxIB0t1+/AAABEtJREFUWIWlmem6giAQhq3MpRVFEMul+7/K8+hAsgyIne9nwdswMwwDJRHKT49bdp6V3R6nPGbKhvJreiRctA2oFZwc0+u/yPn1SVg/1pWueuwZef4MPmTlML0rTO9pKLPDL3amRFAUCaKCpLvtvZWiCzBndaK87WJeiiFk59feobjEQx+kt8waZQ6M5gLqhjwimXnKdUO7RhBdotHJlMd5Ny9YrRkzEFdDo41gRQQ2L9rvlHeLIEHtN+XqdhubF63mtJBWezexGpRia9e1pskW9snUyLChoEYNZs8Q9DbIZdUiAkqIUMOHwH448U4FNgpKiEqXjp+8Tj1OO6Erdjr6XJuJMFQ0iF8UVmSe9ROZgx8cOmcHksAfmdsE98G5CUYfUg7BqmlnPFSwli4ERb0DIa7RgClTcaeuO879nvmNvUhTJxQ6rVUKwU7SWLfYpq38CoO+qiqElQa1qUMtO3+oDOgcblvgvK60ofcBZmCmWlDE9Rw+H+62A+BMecVAkUEwprddUFLPBuDOUYv9MmwFarngQiAQP0IJgXgRMwuuAp8RC5UuEFeDmoFb7f0YDZW7pDdLzHnCgjs4UO8JAftrMrfXEYJljaxtqP/MhbjQo0ElC9UsLLugUGIoMak1fBiE2nvKmEEhh0xqZVNdqBMql1phVL1e2e1wPU/r/dTJS9UjbHWaNVuy7OOlNl7quM4YTA/M1W/uFeZ4cSFlUEeM+rb8Sl86Fkoqq9qG0oZrzrH8+rao1BzDqkrDqjo9LOVS9F6qlVmFTAyleXWvtTFRHy+7fRQYFVKzMHcsOJvr1Or1saDw8adFqFC3rQPxBiPX3mRxftOa0MVYSj7ykqBTwf7WbOLuzEotqFbtp3uhx6OTWbBWZh4xB/CLVggWrK/uudQO4mLdF4+j6dglLTe6bY0Kbh3NkpUkmSy7YY6XKou+3Rfe4dc8TdYmFco7t09u5YK4zh1EKZX1SOAOSJLsY6X1Hslj322MD7L27TFWCUx92xmQrO3bLs9KgVeR5m01dlcaLOr9pq69ZvwFBsS8fSYY29nVJEayE+lwU5PkJktceJ/aki2j8N0Ov7e4PVgJ9d/ikpM6POKxEvr23zjX22E0VnXMvpsh+KBQl/MxJmR8lKOb8APBpVQDu+0EY6plHMuNB6jr2rJuvTt83xw6fg1DkyRjMY85xnMOCzlV6qm1F17uyqzq8POIlPagM8+ZkHvrpHdLEQ9PiYNdHlyFyggu7OfYSKiLBTalFGlpo6FzfiFYVO1WThnYYxy2Pe6Aepzwn+UrrEC8aKgWe6FJkp+x+4ammp1/eYdP3fumpo7jJ8qmHtx5GvjqxWOfnh2dyt4D7ctAld7SAY9ZLYpf/oJYlXH3iZ/yiCIV1t3xQl86rd9+5Wem50L3W0K5epTfsl815c+xt3VQ5nbs/L8wmbqWfV3Vfbl5QO1TnvIm8s+RXTqlkYmfJMkfPT4uTmqr+4UAAAAASUVORK5CYII=",
+            "remarks": "全州摄像头位置信息",
+            "status": "01",
+            "imgFile": "00",
+            "dynamicAttribute": [
+                "摄像头位置",
+                "播放地址"
+            ],
+            "statusDesc": "立即生效"
+        },
+        {
+            "createdDate": "2021-06-09 17:13:32",
+            "lastModifiedDate": "2021-08-31 02:07:39",
+            "id": "fa76622a-033e-4308-8c8f-301f8d4d45b2",
+            "name": "码头",
+            "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFUAAABVCAMAAAAPK1hoAAAAY1BMVEVHcEz///////////////////////////////////////////////////////////9fltD///+vyueHsNxonNPX5fP1+PzD1+18qdnh6/br8vm50eqRt99yo9abveKlxOTN3vCoZDSxAAAAEHRSTlMAIOBAoMCQENDwMGCAUHCwCmvMAQAAAAlwSFlzAAALEgAACxIB0t1+/AAABHdJREFUWIWtmenSqyAMhq21Ll1FBEFt7f1f5RkFlCUg9jvvn85UeRqSEAJNIlScn/f8Miu/P89FzJAdFbcsRZR0jVBHKEqz25/Ixe2F+DC2ta52HDh6/Qw+5VU/vWtI76mv8tMvdmaIYBAphAnKDtt7rwgLMGcxUt0PMa9lH7Jztbcvr/HQJxoss0aZA6M5gbZBz0hmkVHdUNYQpIs0OhnTOO8WJW81Y3rkqm+0N3gZgS3Kbh3y7gCkULemXNvtY4uy05wW0mbvLlaDYmjuurY02cO+uHozbKhQo17mrxD03stptSQCihBRr/eB9XCmTAXWBUwYuwmh0oXRs9ep6eSD0tHjF4WdUp9rc+K1dA2MF0tyz/yRzMGvA50ToyFkNthxwlfmNoJ9cGm80R/lt7iuB+ehGnaBQyXmwlzoTKPSLuA3RYhbMGDKVNepG5WAVO439ipNnQDo7IFB/7Q0SWPdYpt18hFEXaLV9x8oWnPeCYO6zKFWLLRQ/Zm1SDiPVTb00YtRoKkIqToO+gchKp72D9sBYk/5wKOkE8DpL/osowfbBRX2LAClZd15n4qlgC0XXJGIlXfYDhWJeCEzC24k4IB+3l2XOS77bMAF5GZQc+FWeJ8itSHwHZGXg1liLpN3XcVRxfqazOWVYv8A4YE5Jd9+D4i44NSgijSHCos+DAceL4sII5Pa1juj9qhY5JBJrf8LtYaonvUYRZ281GAPsENtvNRR/207d10q1aM7QtS37Vdm77Qu9aPnNxZbIpBZ2ig6NyRh6lDXWoeDgcwqsVVcvktDojH6xRRkvqEFQqRmaa7YxqrZc0iZbuxo14mvkTQU2hDvojpsM+Jzy6U1m86u9m1rRje/ilrRmU3cgzuptXyj+jXV1SqnzEcxI5xirtzcYk7CL0YhEKTPl6J+WgvW3NTzgTllk4m4WOfFdHQ3w08dktEYCLeOZslKklyWXRSLNdehLPp2X/gQv2bVwsYLtVaeaCaovXMrF1idu+cwi611R2AHJEkuN19k6eseaLFzaJDbvtsYn2RP7B4zrAO9y5Smvu0MSLb2DdplNC7AVF4FmrfNWKiVVFwGHpgGv6lbr+nZvkfYzvW8AZo6Gytmwjx9oUfyjMZgU5PkLtsJf2MISS4V4jsdrqe4I1gJ9Z/ikjN9H8VK6Nt/4txOh9FYVSl8J0Phg1Kt/DEmZOp0WzfhC4JrpV5kcILp4qpIjNXOBdSNrvVk795hLWiM3sLQJMl5zGWOcZ3DQ06VemkXT17uxqzb8PWIlHahM4+ZXP/ySb87jbh4ShzscuFKVEZQYl/HRkJdrGBjjFv362jonF8AFlS3l1MGNo3DdukBqMcJf5m+whLAi4ZachSaJMWFh7Etv/xyD5/R0M02o/COsqsn9bdEHxp79ezoXA0e6FAFqvSeTnDMWlL+8hfEppwCHRGNKFJhPRwvDJXT+h1XceF6LrDfEsrVs9r62Kb6Ofa2Tspcxi9/C5OpWzW0dTtUuxvUMRUZbSL/HDmkcxaZ+EmS/ANMTTEA4luLywAAAABJRU5ErkJggg==",
+            "remarks": "全州码头数据",
+            "status": "01",
+            "imgFile": "00",
+            "dynamicAttribute": [
+                "码头位置"
+            ],
+            "statusDesc": "立即生效"
+        }
+    ]
+}
