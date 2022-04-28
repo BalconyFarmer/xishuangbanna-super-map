@@ -1,24 +1,25 @@
 import axios from 'axios';
 
-import data1 from './gisApi/all-line.json'
-import data2 from './gisApi/all-point.json'
-import data3 from './gisApi/checkpoint_map-scope.json'
-import data4 from './gisApi/common-point-record3.json'
-import data5 from './gisApi/point-management-daily.json'
-import data6 from './gisApi/point-management-daily.json'
-import data7 from './gisApi/scan-code-record.json'
-import data8 from './gisApi/search_map-scope.json'
-
-console.log(data1, 1)
-console.log(data2, 2)
-console.log(data3, 3)
-console.log(data4, 4)
-console.log(data5, 5)
-console.log(data6, 6)
-console.log(data7, 7)
-console.log(data8, 8)
-
 let allData = []
+
+
+// import data1 from './gisApi/all-line.json'
+// import data2 from './gisApi/all-point.json'
+// import data3 from './gisApi/checkpoint_map-scope.json'
+// import data4 from './gisApi/common-point-record3.json'
+// import data5 from './gisApi/point-management-daily.json'
+// import data6 from './gisApi/point-management-daily.json'
+// import data7 from './gisApi/scan-code-record.json'
+// import data8 from './gisApi/search_map-scope.json'
+//
+// console.log(data1, 1)
+// console.log(data2, 2)
+// console.log(data3, 3)
+// console.log(data4, 4)
+// console.log(data5, 5)
+// console.log(data6, 6)
+// console.log(data7, 7)
+// console.log(data8, 8)
 
 // data1.data.forEach(item => {
 //     allData.push(item)
@@ -46,6 +47,28 @@ let allData = []
 //     allData.push(item)
 // })
 
+import data1 from './gisApiReal/1response.json'
+import data2 from './gisApiReal/2response.json'
+import data3 from './gisApiReal/3response.json'
+import data4 from './gisApiReal/4response.json'
+import data6 from './gisApiReal/机场.json'
+
+data1.data.forEach(item => {
+    allData.push(item)
+})
+
+data2.data.forEach(item => {
+    allData.push(item)
+})
+data3.data.forEach(item => {
+    allData.push(item)
+})
+data4.data.content.forEach(item => {
+    allData.push(item)
+})
+data6.data.forEach(item => {
+    allData.push(item)
+})
 
 
 export function getAllJinggaiByType(params) {
