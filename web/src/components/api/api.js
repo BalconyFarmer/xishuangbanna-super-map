@@ -96,7 +96,7 @@ let formData = new FormData();
 formData.append("account", "15214087452");
 formData.append("password", "Bjz123456");
 
-const token = null
+let token = null
 login(formData).then(res => {
     const see = res.data.access_token
     token = see
