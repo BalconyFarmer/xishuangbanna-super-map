@@ -20,33 +20,32 @@ console.log(data8, 8)
 
 let allData = []
 
-data1.data.forEach(item => {
-    allData.push(item)
-})
+// data1.data.forEach(item => {
+//     allData.push(item)
+// })
+//
+// data2.data.forEach(item => {
+//     allData.push(item)
+// })
+// data3.data.forEach(item => {
+//     allData.push(item)
+// })
+// data4.data.content.forEach(item => {
+//     allData.push(item)
+// })
+// data5.data.content.forEach(item => {
+//     allData.push(item)
+// })
+// data6.data.content.forEach(item => {
+//     allData.push(item)
+// })
+// data7.data.forEach(item => {
+//     allData.push(item)
+// })
+// data8.data.forEach(item => {
+//     allData.push(item)
+// })
 
-data2.data.forEach(item => {
-    allData.push(item)
-})
-data3.data.forEach(item => {
-    allData.push(item)
-})
-data4.data.content.forEach(item => {
-    allData.push(item)
-})
-data5.data.content.forEach(item => {
-    allData.push(item)
-})
-data6.data.content.forEach(item => {
-    allData.push(item)
-})
-data7.data.forEach(item => {
-    allData.push(item)
-})
-data8.data.forEach(item => {
-    allData.push(item)
-})
-
-console.log(allData, "++++++++")
 
 
 export function getAllJinggaiByType(params) {
@@ -98,88 +97,135 @@ formData.append("password", "Bjz123456");
 
 let token = null
 login(formData).then(res => {
-    const see = res.data.access_token
+    const see = res.data.data.access_token
     token = see
-    console.log(see,"登陆成功")
+    console.log(token, "登陆成功")
 
-})
+    /**
+     * 获取所有段信息1
+     */
+    function getAllLines() {
+        return axios({
+            method: "get",
+            url: "http://59.216.89.250/banna-gis-api/api/gis/v1/boundary-org/config/border-organization/all-line",
+            headers: {
+                'Authorization': 'Bearer ' + token,
+            },
+        })
+    }
 
-/**
- * 获取所有段信息1
- */
-export function getAllLines() {
-    return axios({
-        method: "get",
-        url: "http://59.216.89.250/banna-gis-api/api/gis/v1/boundary-org/config/border-organization/all-line",
-        headers: {
-            'Authorization': 'Bearer ' + token,
-        },
+    getAllLines().then(res => {
+        console.log(res.data, "获取所有段信息1++++++")
     })
-}
 
-getAllLines().then(res => {
-    console.log(res.data, "获取所有段信息1++++++")
-})
+    /**
+     * 获取所有点2
+     */
+    function getAllPoint() {
+        return axios({
+            method: "get",
+            url: "http://59.216.89.250/banna-gis-api/api/gis/v1/boundary-org/config/border-organization/all-point",
+            headers: {
+                'Authorization': 'Bearer ' + token,
+            },
+        })
+    }
 
-/**
- * 获取所有点2
- */
-export function getAllPoint() {
-    return axios({
-        method: "get",
-        url: "http://59.216.89.250/banna-gis-api/api/gis/v1/boundary-org/config/border-organization/all-point",
-        headers: {
-            'Authorization': 'Bearer ' + token,
-        },
+    getAllPoint().then(res => {
+        console.log(res.data, "获取所有点2++++++")
     })
-}
 
-getAllPoint().then(res => {
-    console.log(res.data, "获取所有点2++++++")
-})
+    /**
+     * 获取所有网格3
+     */
+    function getAllmapscope() {
+        return axios({
+            method: "post",
+            url: "http://59.216.89.250/banna-gis-api/api/gis/v1/grid/gis/search/map-scope",
+            data: {
+                "mapType": 4,
+                "scopeCoordinates": [
+                    {"lat": 22.542572021484364, "lng": 100.06210327148443},
+                    {"lat": 22.542572021484364, "lng": 101.93527221679695},
+                    {"lat": 21.255798339843736, "lng": 101.93527221679695},
+                    {"lat": 21.255798339843736, "lng": 100.06210327148443}]
+            },
+            headers: {
+                'Authorization': 'Bearer ' + token,
+            },
+        })
+    }
 
-/**
- * 获取所有网格3
- */
-export function getAllmapscope() {
-    return axios({
-        method: "post",
-        url: "http://59.216.89.250/banna-gis-api/api/gis/v1/grid/gis/search/map-scope",
-        body: {
-            "mapType": 4,
-            "scopeCoordinates": [
-                {"lat": 22.542572021484364, "lng": 100.06210327148443},
-                {"lat": 22.542572021484364, "lng": 101.93527221679695},
-                {"lat": 21.255798339843736, "lng": 101.93527221679695},
-                {"lat": 21.255798339843736, "lng": 100.06210327148443}]
-        },
-        headers: {
-            'Authorization': 'Bearer ' + token,
-        },
+    getAllmapscope().then(res => {
+        console.log(res.data, "获取所有网格3++++++")
     })
-}
 
-getAllmapscope().then(res => {
-    console.log(res.data, "获取所有网格3++++++")
-})
+    /**
+     * 获取通用4
+     */
+    function getAllNormals() {
+        return axios({
+            method: "get",
+            url: "http://59.216.89.250/banna-gis-api/api/gis/v1/point/common-point-record",
+            params: {
+                limit: 6000,
+                page: 1
+            },
+            headers: {
+                'Authorization': 'Bearer ' + token,
+            },
+        })
+    }
 
-/**
- * 获取通用4
- */
-export function getAllNormals() {
-    return axios({
-        method: "get",
-        url: "http://59.216.89.250/banna-gis-api/api/gis/v1/point/common-point-record",
-        params: {
-            limit: 6000,
-            page: 1
-        },
-        headers: {
-            'Authorization': 'Bearer ' + token,
-        },
+    getAllNormals().then(res => {
+        console.log(res.data, "获取通用4++++++")
     })
-}
 
-getAllNormals().then(res => {
-    console.log(res.data, "获取通用4++++++")
+    /**
+     * 获取所有网格5
+     */
+    function getAllcheckpoint() {
+        return axios({
+            method: "post",
+            url: "http://59.216.89.250/banna-digital-passes-api/gis-server/api/checkpoint/v1/query-checkpoint",
+            data: {
+                "limit": 800,
+                "type": "",
+                "typeDesc": [
+                    "机场",
+                    "医院",
+                    "银行"
+                ],
+                "level": 9,
+                "scopeCoordinates": [
+                    {
+                        "lat": 22.542572021484364,
+                        "lng": 100.54138183593756
+                    },
+                    {
+                        "lat": 22.542572021484364,
+                        "lng": 101.4559936523438
+                    },
+                    {
+                        "lat": 21.255798339843736,
+                        "lng": 101.4559936523438
+                    },
+                    {
+                        "lat": 21.255798339843736,
+                        "lng": 100.54138183593756
+                    }
+                ]
+            },
+            headers: {
+                'Authorization': 'Bearer ' + token,
+            },
+        })
+    }
+
+    getAllcheckpoint().then(res => {
+        console.log(res.data, "获取所有网格5++++++")
+    })
 })
+
+
+console.log(allData, "++++++++")
