@@ -364,12 +364,24 @@ export default {
                                     self.superApp.entities.addLineRealGrid(arr, item)
                                 }
                             })
+                        } else if (menuList.indexOf(type) != -1) {
+                            res.data.forEach((item, index) => {
+
+                                if (index < 100) {
+                                    let arr = []
+
+                                    arr[0] = item.gisJson[1]
+                                    arr[1] = item.gisJson[0]
+                                    arr[2] = 0
+
+                                    self.superApp.entities.addIcon1(arr, iconURL, type, "vr", item)
+                                }
+                            })
                         } else {
                             res.data.forEach((item, index) => {
 
                                 if (index < 100) {
                                     let arr = []
-                                    console.log(item, "++++")
 
                                     if (type == "拦阻桩" || type == "界碑界桩" || type == "桥梁" || type == "摄像头" || type == "码头") {
                                         arr[0] = item.gisJosn[1]

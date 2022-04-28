@@ -76,7 +76,7 @@ export function getAllJinggaiByType(params) {
         let list = {}
         list.data = []
         allData.forEach(item => {
-            if (item.typeDesc == params) {　// 唯一防空点
+            if (item.typeDesc == params) {　// 防空点,机场等
                 list.data.push(item)
             }
             if (item.pointName == params) { // 拦阻桩
