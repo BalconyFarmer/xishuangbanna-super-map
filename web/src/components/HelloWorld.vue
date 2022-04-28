@@ -348,7 +348,7 @@ export default {
                                     arr.push(item1.lat)
                                 })
                                 if (arr.length) {
-                                    self.superApp.entities.addLineReal(arr,item)
+                                    self.superApp.entities.addLineReal(arr, item)
                                 }
                                 console.log(arr, "++++++++++++")
                             })
@@ -440,7 +440,7 @@ export default {
             if (data.message.en) {
                 self.hoverMsg = data.message.en.allData
                 dom.style.display = "block"
-                dom.style.left = data.message.position.startPosition.x + "px"
+                dom.style.left = data.message.position.startPosition.x + 10 + "px"
                 dom.style.top = data.message.position.startPosition.y + 10 + "px"
                 self.entityName = data.message.en.name
             } else {
@@ -449,6 +449,8 @@ export default {
         })
         this.superApp.eventCenter.addEventListener('hideToolTip', function (data) {
             dom.style.display = "none"
+            self.hoverMsg = null
+            self.entityName = null
         })
         self.superApp.eventCenter.addEventListener('pickEntity', function (data) {
             if (data.message.en.id.type == "vr") {
