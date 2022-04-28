@@ -332,6 +332,7 @@ export default {
                 this.menusList.push(type)
                 const self = this
                 getAllJinggaiByType(type).then(res => {
+                        // debugger
                         let menuList = ['机场', '酒店', '超市', '餐饮', '查缉点', '防控点', '出租房', '医院', '学校', '银行', '公司', '候车站', '旅游景点',]
                         // let menuList = ["机场", "酒店", "超市", "餐饮", "查缉点", "防控点", "出租房", "医院", "学校", "银行", "公司", "候车站", "旅游景点",]
                         let iconURL = null
@@ -351,19 +352,34 @@ export default {
                                 if (arr.length) {
                                     self.superApp.entities.addLineReal(arr, item)
                                 }
-                                console.log(arr, "++++++++++++")
+                            })
+                        } else if (type == "网格") {
+                            res.data.forEach(item => {
+                                let arr = []
+                                item.gisJosn.forEach(item1 => {
+                                    arr.push(item1[1])
+                                    arr.push(item1[0])
+                                })
+                                if (arr.length) {
+                                    self.superApp.entities.addLineRealGrid(arr, item)
+                                }
                             })
                         } else {
                             res.data.forEach((item, index) => {
+
                                 if (index < 100) {
                                     let arr = []
-                                    if (item.pointJosn instanceof Object) {
+                                    console.log(item, "++++")
+
+                                    if (type == "拦阻桩" || type == "界碑界桩" || type == "桥梁" || type == "摄像头" || type == "码头") {
+                                        arr[0] = item.gisJosn[1]
+                                        arr[1] = item.gisJosn[0]
+                                        arr[2] = 0
+                                    }
+
+                                    if (type == "防控点") {
                                         arr[0] = item.pointJosn.lng
                                         arr[1] = item.pointJosn.lat
-                                        arr[2] = 0
-                                    } else if (item.gisJson instanceof Array) {
-                                        arr[0] = item.gisJson[1]
-                                        arr[1] = item.gisJson[0]
                                         arr[2] = 0
                                     }
 
