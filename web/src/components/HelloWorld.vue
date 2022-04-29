@@ -313,15 +313,19 @@ export default {
 
         handleRightMenus(type) {
             if (this.menusList.indexOf(type) != -1) {
+
+                // const dataSources = this.superApp.viewer.dataSources._dataSources[0].entities
+                const dataSources = this.superApp.viewer.entities
+
                 this.menusList.splice(this.menusList.indexOf(type), 1)
                 let _arr = []
-                this.superApp.viewer.entities.values.forEach(item => {
+                dataSources.values.forEach(item => {
                     if (item.name == type) {
                         _arr.push(item)
                     }
                 })
                 _arr.forEach(item => {
-                    this.superApp.viewer.entities.remove(item)
+                    dataSources.remove(item)
                 })
                 this.updateRes()
             } else {

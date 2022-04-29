@@ -6,6 +6,21 @@ export default class Entities {
         this.luDeng = null
         this.camera = null
         this.floor = null
+        this.dataSource = new Cesium.CustomDataSource('myData');
+        this.initCluster()
+    }
+
+    initCluster() {
+        this.dataSource.clustering.enabled = true
+
+        this.dataSource.clustering.clusterBillboards = true
+        this.dataSource.clustering.clusterLabels = true
+        this.dataSource.clustering.clusterPoints = true
+
+        this.dataSource.clustering.shows = false
+        this.dataSource.clustering.pixelRange = 15;
+        this.dataSource.clustering.minimumClusterSize = 2
+        this.app.viewer.dataSources.add(this.dataSource);
     }
 
     /**
@@ -402,9 +417,13 @@ export default class Entities {
      * 添加警员图标
      */
     addIcon1(pointS, type, name, showFlag, allData) {
+
+        let entitys = this.app.viewer.entities
+        // let entitys = this.dataSource.entities
+
         const _po = this.app.c3Transform.longToC3(parseFloat(pointS[0]), parseFloat(pointS[1]), parseFloat(pointS[2]) + 100)
 
-        const result = this.app.viewer.entities.add({
+        const result = entitys.add({
             type: showFlag,
             name: name,
             allData: allData,
@@ -449,7 +468,55 @@ export default class Entities {
                 show: true
             }
         })
-        return result
+
+        // entitys.add({
+        //     type: showFlag,
+        //     name: name,
+        //     allData: allData,
+        //     position: _po,
+        //     billboard: {
+        //         image: require("./img/" + type),
+        //         width: 60,
+        //         height: 60,
+        //         scale: 1,
+        //         pixelOffset: new Cesium.Cartesian2(0, 40),
+        //         verticalOrigin: Cesium.VerticalOrigin.BOTTOM,//贴地属性
+        //     },
+        //     // 文字
+        //     label: {
+        //         // 文本。支持显式换行符“ \ n”
+        //         text: (name),
+        //         // 字体样式,以CSS语法指定字体
+        //         font: '14pt Source Han Sans CN',
+        //         // 字体颜色
+        //         fillColor: this.app.Cesium.Color.WHITE,
+        //         // 背景颜色
+        //         backgroundColor: this.app.Cesium.Color.BLACK.withAlpha(0.5),
+        //         // 是否显示背景颜色
+        //         showBackground: true,
+        //         // 字体边框
+        //         outline: false,
+        //         // 字体边框颜色
+        //         outlineColor: this.app.Cesium.Color.BLACK,
+        //         // 字体边框尺寸
+        //         outlineWidth: 10,
+        //         // 应用于图像的统一比例。比例大于会1.0放大标签,而比例小于会1.0缩小标签。
+        //         scale: 1.0,
+        //         // 设置样式：FILL：填写标签的文本,但不要勾勒轮廓；OUTLINE：概述标签的文本,但不要填写；FILL_AND_OUTLINE：填写并概述标签文本。
+        //         style: this.app.Cesium.LabelStyle.FILL_AND_OUTLINE,
+        //         // 相对于坐标的水平位置
+        //         verticalOrigin: this.app.Cesium.VerticalOrigin.CENTER,
+        //         // 相对于坐标的水平位置
+        //         horizontalOrigin: this.app.Cesium.HorizontalOrigin.CENTER,
+        //         // 该属性指定标签在屏幕空间中距此标签原点的像素偏移量
+        //         pixelOffset: new this.app.Cesium.Cartesian2(0, -40),
+        //         // 是否显示
+        //         show: true
+        //     }
+        // });
+
+
+        // return result
     }
 
     /**
@@ -480,11 +547,14 @@ export default class Entities {
         return [_a, _b]
     }
 
-    addLineReal(arr, allData,type) {
+    addLineReal(arr, allData, type) {
+
+        let entitys = this.app.viewer.entities
+        // let entitys = this.dataSource.entities
 
         let color = Cesium.Color.fromRandom()
-        const _a = this.app.viewer.entities.add({ // 用于打底的线
-            name:type,
+        const _a = entitys.add({ // 用于打底的线
+            name: type,
             allData: allData,
             polyline: {
                 positions: Cesium.Cartesian3.fromDegreesArray(arr),
@@ -495,10 +565,10 @@ export default class Entities {
             },
         });
 
-        const result = this.app.viewer.entities.add({
+        const result = entitys.add({
             allData: allData,
-            position: Cesium.Cartesian3.fromDegreesArray([allData.lineGisJosn[0].lng,allData.lineGisJosn[0].lat])[0],
-            name:type,
+            position: Cesium.Cartesian3.fromDegreesArray([allData.lineGisJosn[0].lng, allData.lineGisJosn[0].lat])[0],
+            name: type,
             // 文字
             label: {
                 text: (allData.typeDesc),
@@ -525,11 +595,13 @@ export default class Entities {
      * @param arr
      * @param allData
      */
-    addLineRealGrid(arr, allData,type) {
+    addLineRealGrid(arr, allData, type) {
+        let entitys = this.app.viewer.entities
+        // let entitys = this.dataSource.entities
 
         let color = Cesium.Color.fromRandom()
-        const _a = this.app.viewer.entities.add({ // 用于打底的线
-            name:type,
+        const _a = entitys.add({ // 用于打底的线
+            name: type,
             allData: allData,
             polyline: {
                 positions: Cesium.Cartesian3.fromDegreesArray(arr),
@@ -539,10 +611,10 @@ export default class Entities {
             },
         });
 
-        const result = this.app.viewer.entities.add({
+        const result = entitys.add({
             allData: allData,
-            position: Cesium.Cartesian3.fromDegreesArray([allData.gisJosn[0][1],allData.gisJosn[0][0]])[0],
-            name:type,
+            position: Cesium.Cartesian3.fromDegreesArray([allData.gisJosn[0][1], allData.gisJosn[0][0]])[0],
+            name: type,
 
             // 文字
             label: {
