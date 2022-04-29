@@ -1,7 +1,0 @@
-{
-  "ts": "2022-04-28 15:28:29",
-  "code": -1,
-  "desc": "org.hibernate.exception.DataException: could not extract ResultSet",
-  "ex": null,
-  "data": null
-}

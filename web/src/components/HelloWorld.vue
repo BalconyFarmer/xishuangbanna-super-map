@@ -328,6 +328,8 @@ export default {
                 this.menusList.push(type)
                 const self = this
                 getAllJinggaiByType(type).then(res => {
+                        console.log(type, res.data, "当前选取数据")
+
                         let menuList = ['机场', '酒店', '超市', '餐饮', '查缉点', '防控点', '出租房', '医院', '学校', '银行', '公司', '候车站', '旅游景点',]
                         let iconURL = null
                         if (menuList.indexOf(type) != -1) {
@@ -816,7 +818,7 @@ export default {
     top: 0;
     background-image: url("../assets/layer_border.png");
     background-size: 100% 100%;
-    font-size: 5px;
+    font-size: 15px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;

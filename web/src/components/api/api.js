@@ -2,7 +2,7 @@ import axios from 'axios';
 
 let allData = []
 
-
+// 测试数据
 // import data1 from './gisApi/all-line.json'
 // import data2 from './gisApi/all-point.json'
 // import data3 from './gisApi/checkpoint_map-scope.json'
@@ -47,8 +47,9 @@ let allData = []
 //     allData.push(item)
 // })
 
-import data1 from './gisApiReal/1response.json'
-import data2 from './gisApiReal/2response.json'
+// 真实数据
+/*import data1 from './gisApiReal/1response.json'
+// import data2 from './gisApiReal/2response.json' // 隐藏主类所有点
 import data3 from './gisApiReal/3response.json'
 import data4 from './gisApiReal/4response.json'
 import data6 from './gisApiReal/机场.json'
@@ -57,9 +58,9 @@ data1.data.forEach(item => {
     allData.push(item)
 })
 
-data2.data.forEach(item => {
-    allData.push(item)
-})
+// data2.data.forEach(item => {
+//     allData.push(item)
+// })
 data3.data.forEach(item => {
     allData.push(item)
 })
@@ -68,7 +69,7 @@ data4.data.content.forEach(item => {
 })
 data6.data.forEach(item => {
     allData.push(item)
-})
+})*/
 
 
 export function getAllJinggaiByType(params) {
@@ -128,7 +129,7 @@ login(formData).then(res => {
     console.log(token, "登陆成功")
 
     /**
-     * 获取所有段信息1
+     * 获取所有段信息1 防控段
      */
     function getAllLines() {
         return axios({
@@ -142,11 +143,14 @@ login(formData).then(res => {
 
     getAllLines().then(res => {
         console.log(res.data, "获取所有段信息1++++++")
+        res.data.data.forEach(item => {
+            allData.push(item)
+        })
     })
 
-    /**
+/*    /!**
      * 获取所有点2
-     */
+     *!/
     function getAllPoint() {
         return axios({
             method: "get",
@@ -159,7 +163,10 @@ login(formData).then(res => {
 
     getAllPoint().then(res => {
         console.log(res.data, "获取所有点2++++++")
-    })
+        res.data.data.forEach(item => {
+            allData.push(item)
+        })
+    })*/
 
     /**
      * 获取所有网格3
@@ -184,6 +191,9 @@ login(formData).then(res => {
 
     getAllmapscope().then(res => {
         console.log(res.data, "获取所有网格3++++++")
+        res.data.data.forEach(item => {
+            allData.push(item)
+        })
     })
 
     /**
@@ -205,23 +215,22 @@ login(formData).then(res => {
 
     getAllNormals().then(res => {
         console.log(res.data, "获取通用4++++++")
+        res.data.data.content.forEach(item => {
+            allData.push(item)
+        })
     })
 
     /**
-     * 获取所有网格5
+     * 获取所有checkpoint 5
      */
     function getAllcheckpoint() {
         return axios({
             method: "post",
             url: "http://59.216.89.250/banna-digital-passes-api/gis-server/api/checkpoint/v1/query-checkpoint",
             data: {
-                "limit": 800,
+                "limit": 1000,
                 "type": "",
-                "typeDesc": [
-                    "机场",
-                    "医院",
-                    "银行"
-                ],
+                "typeDesc": ['机场', '酒店', '超市', '餐饮', '查缉点', '防控点', '出租房', '医院', '学校', '银行', '公司', '候车站', '旅游景点',],
                 "level": 9,
                 "scopeCoordinates": [
                     {
@@ -250,6 +259,9 @@ login(formData).then(res => {
 
     getAllcheckpoint().then(res => {
         console.log(res.data, "获取所有网格5++++++")
+        res.data.data.forEach(item => {
+            allData.push(item)
+        })
     })
 })
 
