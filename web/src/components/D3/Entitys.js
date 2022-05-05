@@ -449,9 +449,9 @@ export default class Entities {
                 // 字体颜色
                 fillColor: this.app.Cesium.Color.WHITE,
                 // 背景颜色
-                backgroundColor: this.app.Cesium.Color.BLACK.withAlpha(0.5),
+                // backgroundColor: this.app.Cesium.Color.BLACK.withAlpha(0.5),
                 // 是否显示背景颜色
-                showBackground: true,
+                // showBackground: true,
                 // 字体边框
                 outline: false,
                 // 字体边框颜色
