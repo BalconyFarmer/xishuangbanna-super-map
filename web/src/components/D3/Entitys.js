@@ -436,7 +436,6 @@ export default class Entities {
                 pixelOffset: new Cesium.Cartesian2(0, 40),
                 verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
                 heightReference: Cesium.HeightReference.CLAMP_TO_GROUND, //CLAMP_TO_GROUND   RELATIVE_TO_GROUND
-                // classificationType: Cesium.ClassificationType.BOTH,
                 clampToGround: true,
 
             },
