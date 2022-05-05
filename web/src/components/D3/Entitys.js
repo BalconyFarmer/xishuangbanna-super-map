@@ -418,8 +418,8 @@ export default class Entities {
      */
     addIcon1(pointS, type, name, showFlag, allData) {
 
-        let entitys = this.app.viewer.entities
-        // let entitys = this.dataSource.entities
+        // let entitys = this.app.viewer.entities
+        let entitys = this.dataSource.entities
 
         const _po = this.app.c3Transform.longToC3(parseFloat(pointS[0]), parseFloat(pointS[1]), parseFloat(pointS[2]) + 100)
 

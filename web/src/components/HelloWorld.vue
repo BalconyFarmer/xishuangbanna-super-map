@@ -313,11 +313,10 @@ export default {
 
         handleRightMenus(type) {
             if (this.menusList.indexOf(type) != -1) {
-
-                // const dataSources = this.superApp.viewer.dataSources._dataSources[0].entities
-                const dataSources = this.superApp.viewer.entities
-
                 this.menusList.splice(this.menusList.indexOf(type), 1)
+
+                // 非聚合点移除
+                const dataSources = this.superApp.viewer.entities
                 let _arr = []
                 dataSources.values.forEach(item => {
                     if (item.name == type) {
@@ -327,6 +326,19 @@ export default {
                 _arr.forEach(item => {
                     dataSources.remove(item)
                 })
+
+                // 聚合点移除
+                const dataSources1 = this.superApp.viewer.dataSources._dataSources[0].entities
+                let _arr1 = []
+                dataSources1.values.forEach(item => {
+                    if (item.name == type) {
+                        _arr1.push(item)
+                    }
+                })
+                _arr1.forEach(item => {
+                    dataSources1.remove(item)
+                })
+
                 this.updateRes()
             } else {
                 this.menusList.push(type)
