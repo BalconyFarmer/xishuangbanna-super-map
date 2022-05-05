@@ -48,7 +48,7 @@ let allData = []
 // })
 
 // 真实数据
-/*import data1 from './gisApiReal/1response.json'
+import data1 from './gisApiReal/1response.json'
 // import data2 from './gisApiReal/2response.json' // 隐藏主类所有点
 import data3 from './gisApiReal/3response.json'
 import data4 from './gisApiReal/4response.json'
@@ -69,7 +69,7 @@ data4.data.content.forEach(item => {
 })
 data6.data.forEach(item => {
     allData.push(item)
-})*/
+})
 
 
 export function getAllJinggaiByType(params) {

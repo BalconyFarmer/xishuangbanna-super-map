@@ -434,10 +434,15 @@ export default class Entities {
                 height: 60,
                 scale: 1,
                 pixelOffset: new Cesium.Cartesian2(0, 40),
-                verticalOrigin: Cesium.VerticalOrigin.BOTTOM,//贴地属性
+                verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+                heightReference: Cesium.HeightReference.CLAMP_TO_GROUND, //CLAMP_TO_GROUND   RELATIVE_TO_GROUND
+                // classificationType: Cesium.ClassificationType.BOTH,
+                clampToGround: true,
+
             },
             // 文字
             label: {
+                classificationType: Cesium.ClassificationType.BOTH,
                 // 文本。支持显式换行符“ \ n”
                 text: (name),
                 // 字体样式,以CSS语法指定字体
@@ -460,12 +465,15 @@ export default class Entities {
                 style: this.app.Cesium.LabelStyle.FILL_AND_OUTLINE,
                 // 相对于坐标的水平位置
                 verticalOrigin: this.app.Cesium.VerticalOrigin.CENTER,
+                heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
                 // 相对于坐标的水平位置
                 horizontalOrigin: this.app.Cesium.HorizontalOrigin.CENTER,
                 // 该属性指定标签在屏幕空间中距此标签原点的像素偏移量
                 pixelOffset: new this.app.Cesium.Cartesian2(0, -40),
                 // 是否显示
-                show: true
+                show: true,
+                clampToGround: true,
+
             }
         })
 
@@ -562,6 +570,7 @@ export default class Entities {
                 material: color,
                 clampToGround: true,
                 allData: allData,
+                heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
             },
         });
 
@@ -585,6 +594,8 @@ export default class Entities {
                 pixelOffset: new this.app.Cesium.Cartesian2(0, -20),
                 show: true,
                 clampToGround: true,
+                heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
+
 
             }
         })
@@ -608,6 +619,8 @@ export default class Entities {
                 width: 5, // 线的宽度，像素为单位
                 material: color,
                 clampToGround: true,
+                heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
+
             },
         });
 
@@ -632,6 +645,7 @@ export default class Entities {
                 pixelOffset: new this.app.Cesium.Cartesian2(0, -20),
                 show: true,
                 clampToGround: true,
+                heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
 
             }
         })
