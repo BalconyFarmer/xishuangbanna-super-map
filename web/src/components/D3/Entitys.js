@@ -18,9 +18,15 @@ export default class Entities {
         this.dataSource.clustering.clusterPoints = true
 
         this.dataSource.clustering.shows = false
-        this.dataSource.clustering.pixelRange = 15;
-        this.dataSource.clustering.minimumClusterSize = 2
+        this.dataSource.clustering.minimumClusterSize = 2 // 获取或设置可以聚集的最小屏幕空间对象数。
+        this.dataSource.clustering.pixelRange = 15; // 获取或设置像素范围以扩展屏幕空间边界框。
         this.app.viewer.dataSources.add(this.dataSource);
+
+        // The default cluster values.
+        this.dataSource.clustering.clusterEvent.addEventListener(function(entities, cluster) {
+            cluster.label.show = true;
+            cluster.label.text = entities.length.toLocaleString();
+        });
     }
 
     /**

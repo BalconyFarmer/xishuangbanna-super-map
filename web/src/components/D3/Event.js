@@ -58,11 +58,19 @@ export default class Event {
             let pickedFeature = self.app.viewer.scene.pick(movement.endPosition);
             if (self.app.Cesium.defined(pickedFeature)) {
                 if (pickedFeature.id != undefined) {
-                    currentEntity = self.app.viewer.entities.getById(pickedFeature.id._id);
+                    const entities = self.app.viewer.dataSources._dataSources[0].entities
+                    // const entities = self.app.viewer.entities
+
+                    currentEntity = entities.getById(pickedFeature.id._id);
                     lastEntity = currentEntity;
                     self.app.eventCenter.dispatchEvent({
                         type: 'hoverE',
-                        message: {position: movement, en: currentEntity}
+                        message: {position: movement, en: pickedFeature.id}
+                    })
+                } else {
+                    self.app.eventCenter.dispatchEvent({
+                        type: 'hideToolTip',
+                        message: {position: null}
                     })
                 }
             } else {
