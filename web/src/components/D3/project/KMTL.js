@@ -5,9 +5,10 @@ export default class KMTL {
     constructor(app) {
         this.app = app
         this._stationsArr = []
-        this.superMapUrl = "http://192.168.1.35:8090"
+        // 1线上发布修改此处:
+        // this.superMapUrl = "http://192.168.1.35:8090"
         // this.superMapUrl = "http://118.24.128.22:58090"
-        // this.superMapUrl = "http://localhost:8090"
+        this.superMapUrl = "http://localhost:8090"
         this.run()
 
     }

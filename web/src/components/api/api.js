@@ -54,6 +54,7 @@ import data3 from './gisApiReal/3response.json'
 import data4 from './gisApiReal/4response.json'
 import data6 from './gisApiReal/机场.json'
 
+// <!--    2线上发布核对此处: 以下代码要注释掉-->
 /*data1.data.forEach(item => {
     allData.push(item)
 })

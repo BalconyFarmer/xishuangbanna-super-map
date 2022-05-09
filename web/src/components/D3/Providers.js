@@ -13,11 +13,10 @@ export default class Providers {
             //     isSct: false
             // })
 
-            let url = "http://192.168.1.35:8090/iserver/services/3D-local3DCache-DEMBN/rest/realspace/datas/DEM_BN"
+            // 2线上发布修改此处:
+            // let url = "http://192.168.1.35:8090/iserver/services/3D-local3DCache-DEMBN/rest/realspace/datas/DEM_BN"
             // let url = "http://118.24.128.22:58090/iserver/services/3D-local3DCache-DEMBN/rest/realspace/datas/DEM_BN"
-            // let url = "http://localhost:8090/iserver/services/3D-local3DCache-DEMBN/rest/realspace/datas/DEM_BN"
-
-            // let url = "http://localhost:8090/iserver/services/3D-local3DCache-DEMBN/rest/realspace/datas/DEM_BN"
+            let url = "http://localhost:8090/iserver/services/3D-local3DCache-DEMBN/rest/realspace/datas/DEM_BN"
 
             // 版纳地形服务
             let terrainProvider = new Cesium.CesiumTerrainProvider({
