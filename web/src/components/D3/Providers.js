@@ -45,19 +45,27 @@ export default class Providers {
         // let url = "http://118.24.128.22:58090/iserver/services/map-agscachev2-IMG/rest/maps/IMG"
         // let url = "http://localhost:8090/iserver/services/map-agscachev2-IMG/rest/maps/IMG"
 
-        let url = this.app.kmtl.superMapUrl + "/iserver/services/map-agscachev2-IMG/rest/maps/IMG"
 
+        let url0_8 = this.app.kmtl.superMapUrl + "/iserver/services/map-agscachev2-TuCeng2/rest/maps/图层"
+        let _b = new Cesium.SuperMapImageryProvider({
+            url: url0_8,
+            minimumLevel: 0, maximumLevel: 7
+        });
+        this.app.viewer.imageryLayers.addImageryProvider(_b);
+
+        let url9_16 = this.app.kmtl.superMapUrl + "/iserver/services/map-agscachev2-TuCeng/rest/maps/图层"
+        let _c = new Cesium.SuperMapImageryProvider({
+            url: url9_16,
+            minimumLevel: 0, maximumLevel: 15
+        });
+        this.app.viewer.imageryLayers.addImageryProvider(_c);
+
+        let url = this.app.kmtl.superMapUrl + "/iserver/services/map-agscachev2-IMG/rest/maps/IMG"
         var a = new Cesium.SuperMapImageryProvider({
             url: url,
-            minimumLevel: 1, maximumLevel: 17
+            minimumLevel: 0, maximumLevel: 17
         });
-
         this.app.viewer.imageryLayers.addImageryProvider(a);
-        this.setName("Bing")
-        this.getImageryLayers()
-
-        // const see = this.app.viewer.imageryLayers
-        // debugger
     }
 
 
