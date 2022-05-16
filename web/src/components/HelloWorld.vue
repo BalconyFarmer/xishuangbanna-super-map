@@ -476,9 +476,9 @@ export default {
                 let menuList = ['机场', '酒店', '超市', '餐饮', '查缉点', '防控点', '出租房', '医院', '学校', '银行', '公司', '候车站', '旅游景点',]
 
                 if (menuList.indexOf(data.message.en.allData.typeDesc) != -1) {
-                    self.hoverMsg[0] = "名称:" + data.message.en.allData.typeDesc
-                    self.hoverMsg[1] = data.message.en.allData.name
-                    self.hoverMsg[2] = data.message.en.allData.gisJson
+                    self.hoverMsg[0] = "名称:" + data.message.en.allData.name
+                    self.hoverMsg[1] = "类型:" + data.message.en.allData.typeDesc
+                    self.hoverMsg[2] = "坐标:" +data.message.en.allData.gisJson
                 } else if (data.message.en.allData.propertiesDesc == "网格") {
                     self.hoverMsg[0] = "名称:" + data.message.en.allData.name
                     self.hoverMsg[1] = data.message.en.allData.typeDesc
@@ -497,8 +497,8 @@ export default {
 
                 self.$forceUpdate();
                 dom.style.display = "block"
-                dom.style.left = data.message.position.startPosition.x + 10 + "px"
-                dom.style.top = data.message.position.startPosition.y + 10 + "px"
+                dom.style.left = data.message.position.startPosition.x + 20 + "px"
+                dom.style.top = data.message.position.startPosition.y + 20 + "px"
             } else {
                 dom.style.display = "none"
             }
@@ -834,15 +834,16 @@ export default {
 }
 
 #tooltip {
-    width: 200px;
-    height: 100px;
-    color: white;
+    width: 250px;
+    height: 125px;
+    padding: 10px;
     position: fixed;
     left: 0;
     top: 0;
-    background-image: url("../assets/layer_border.png");
+    background-image: url("../assets/login.png");
     background-size: 100% 100%;
     font-size: 15px;
+    color: black;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;

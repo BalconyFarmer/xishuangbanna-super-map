@@ -600,8 +600,6 @@ export default class Entities {
                 show: true,
                 clampToGround: true,
                 heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
-
-
             }
         })
     }
