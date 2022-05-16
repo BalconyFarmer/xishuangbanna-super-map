@@ -8,6 +8,12 @@ export default class Entities {
         this.floor = null
         this.dataSource = new Cesium.CustomDataSource('myData');
         this.initCluster()
+        this.billboards = this.app.viewer.scene.primitives.add(
+            new Cesium.BillboardCollection()
+        )
+        this.labels = this.app.viewer.scene.primitives.add(
+            new Cesium.LabelCollection()
+        );
     }
 
     initCluster() {
@@ -23,7 +29,7 @@ export default class Entities {
         this.app.viewer.dataSources.add(this.dataSource);
 
         // The default cluster values.
-        this.dataSource.clustering.clusterEvent.addEventListener(function(entities, cluster) {
+        this.dataSource.clustering.clusterEvent.addEventListener(function (entities, cluster) {
             cluster.label.show = true;
             cluster.label.text = entities.length.toLocaleString();
         });
@@ -482,54 +488,21 @@ export default class Entities {
             }
         })
 
-        // entitys.add({
-        //     type: showFlag,
-        //     name: name,
-        //     allData: allData,
+        // 无法贴地
+        // this.billboards.add({
         //     position: _po,
-        //     billboard: {
-        //         image: require("./img/" + type),
-        //         width: 60,
-        //         height: 60,
-        //         scale: 1,
-        //         pixelOffset: new Cesium.Cartesian2(0, 40),
-        //         verticalOrigin: Cesium.VerticalOrigin.BOTTOM,//贴地属性
-        //     },
-        //     // 文字
-        //     label: {
-        //         // 文本。支持显式换行符“ \ n”
-        //         text: (name),
-        //         // 字体样式,以CSS语法指定字体
-        //         font: '14pt Source Han Sans CN',
-        //         // 字体颜色
-        //         fillColor: this.app.Cesium.Color.WHITE,
-        //         // 背景颜色
-        //         backgroundColor: this.app.Cesium.Color.BLACK.withAlpha(0.5),
-        //         // 是否显示背景颜色
-        //         showBackground: true,
-        //         // 字体边框
-        //         outline: false,
-        //         // 字体边框颜色
-        //         outlineColor: this.app.Cesium.Color.BLACK,
-        //         // 字体边框尺寸
-        //         outlineWidth: 10,
-        //         // 应用于图像的统一比例。比例大于会1.0放大标签,而比例小于会1.0缩小标签。
-        //         scale: 1.0,
-        //         // 设置样式：FILL：填写标签的文本,但不要勾勒轮廓；OUTLINE：概述标签的文本,但不要填写；FILL_AND_OUTLINE：填写并概述标签文本。
-        //         style: this.app.Cesium.LabelStyle.FILL_AND_OUTLINE,
-        //         // 相对于坐标的水平位置
-        //         verticalOrigin: this.app.Cesium.VerticalOrigin.CENTER,
-        //         // 相对于坐标的水平位置
-        //         horizontalOrigin: this.app.Cesium.HorizontalOrigin.CENTER,
-        //         // 该属性指定标签在屏幕空间中距此标签原点的像素偏移量
-        //         pixelOffset: new this.app.Cesium.Cartesian2(0, -40),
-        //         // 是否显示
-        //         show: true
-        //     }
+        //     image: require("./img/" + type),
+        //     scale: 0.1,
+        //     verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+        //     // heightReference: Cesium.HeightReference.CLAMP_TO_GROUND, //CLAMP_TO_GROUND   RELATIVE_TO_GROUND
+        //     clampToGround: true,
         // });
 
-
-        // return result
+        // this.labels.add({
+        //     position: _po,
+        //     text: name,
+        //     font: '7pt Source Han Sans CN',
+        // });
     }
 
     /**
