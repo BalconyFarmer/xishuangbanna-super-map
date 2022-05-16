@@ -866,7 +866,7 @@ export default {
     background-image: url("../assets/login.png");
     background-size: 100% 100%;
     font-size: 15px;
-    color: black;
+    color: white;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;

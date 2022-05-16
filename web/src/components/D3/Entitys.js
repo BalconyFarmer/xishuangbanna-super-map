@@ -444,15 +444,13 @@ export default class Entities {
                 image: require("./img/" + type),
                 width: 60,
                 height: 60,
-                scale: 1,
-                pixelOffset: new Cesium.Cartesian2(0, 40),
+                scale: 0.5,
                 verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
                 heightReference: Cesium.HeightReference.CLAMP_TO_GROUND, //CLAMP_TO_GROUND   RELATIVE_TO_GROUND
                 clampToGround: true,
-
             },
             // 文字
-            label: {
+/*            label: {
                 classificationType: Cesium.ClassificationType.BOTH,
                 // 文本。支持显式换行符“ \ n”
                 text: (name),
@@ -485,7 +483,7 @@ export default class Entities {
                 show: true,
                 clampToGround: true,
 
-            }
+            }*/
         })
 
         // 无法贴地
