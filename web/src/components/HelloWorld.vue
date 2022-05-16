@@ -41,6 +41,11 @@
                         <div class="icon icon5"></div>
                         <span>码头</span>
                     </div>
+                    <div :class="[menusList.indexOf('联防所') != -1 ?'active':'disAcitve']" class="menu11"
+                         @click="handleRightMenus('联防所')">
+                        <div class="icon iconLFS"></div>
+                        <span>联防所</span>
+                    </div>
                     <div :class="[menusList.indexOf('平安版纳检查点') != -1 ?'active':'disAcitve']" class="menu11"
                          @click="handleRightMenus('平安版纳检查点')">
                         <div class="icon icon6"></div>
@@ -375,7 +380,7 @@ export default {
                                     self.superApp.entities.addLineRealGrid(arr, item, "网格")
                                 }
                             })
-                        } else if (menuList.indexOf(type) != -1) {
+                        } else if (menuList.indexOf(type) != -1 || type == "联防所") {
                             res.data.forEach((item, index) => {
                                 let arr = []
                                 arr[0] = item.gisJson[1]
@@ -476,9 +481,16 @@ export default {
                 let menuList = ['机场', '酒店', '超市', '餐饮', '查缉点', '防控点', '出租房', '医院', '学校', '银行', '公司', '候车站', '旅游景点',]
 
                 if (menuList.indexOf(data.message.en.allData.typeDesc) != -1) {
-                    self.hoverMsg[0] = "名称:" + data.message.en.allData.name
-                    self.hoverMsg[1] = "类型:" + data.message.en.allData.typeDesc
-                    self.hoverMsg[2] = "坐标:" +data.message.en.allData.gisJson
+                    if (data.message.en.allData.typeDesc == "防控点" && data.message.en.allData.name.indexOf("联防所") != -1) {
+                        self.hoverMsg[0] = "名称:" + data.message.en.allData.name
+                        self.hoverMsg[1] = "类型:" + "联防所"
+                        self.hoverMsg[2] = "坐标:" + data.message.en.allData.gisJson
+                    } else {
+                        self.hoverMsg[0] = "名称:" + data.message.en.allData.name
+                        self.hoverMsg[1] = "类型:" + data.message.en.allData.typeDesc
+                        self.hoverMsg[2] = "坐标:" + data.message.en.allData.gisJson
+                    }
+
                 } else if (data.message.en.allData.propertiesDesc == "网格") {
                     self.hoverMsg[0] = "名称:" + data.message.en.allData.name
                     self.hoverMsg[1] = data.message.en.allData.typeDesc
@@ -513,13 +525,21 @@ export default {
             let menuList = ['机场', '酒店', '超市', '餐饮', '查缉点', '防控点', '出租房', '医院', '学校', '银行', '公司', '候车站', '旅游景点',]
 
             if (menuList.indexOf(data.message.en.id.allData.typeDesc) != -1) {
-                self.clickMsg[0] = data.message.en.id.allData.typeDesc
-                self.clickMsg[1] = data.message.en.id.allData.name
-                self.clickMsg[2] = data.message.en.id.allData.gisJson[1]
-                self.clickMsg[3] = data.message.en.id.allData.gisJson[0]
-                self.clickMsg[4] = ""
-                self.dialogVisible = true
-
+                if (data.message.en.id.allData.name.indexOf("联防所") != -1) {
+                    self.clickMsg[0] = "联防所"
+                    self.clickMsg[1] = data.message.en.id.allData.name
+                    self.clickMsg[2] = data.message.en.id.allData.gisJson[1]
+                    self.clickMsg[3] = data.message.en.id.allData.gisJson[0]
+                    self.clickMsg[4] = ""
+                    self.dialogVisible = true
+                } else {
+                    self.clickMsg[0] = data.message.en.id.allData.typeDesc
+                    self.clickMsg[1] = data.message.en.id.allData.name
+                    self.clickMsg[2] = data.message.en.id.allData.gisJson[1]
+                    self.clickMsg[3] = data.message.en.id.allData.gisJson[0]
+                    self.clickMsg[4] = ""
+                    self.dialogVisible = true
+                }
             } else if (data.message.en.id.allData.propertiesDesc == "网格") {
                 self.clickMsg[0] = data.message.en.id.allData.name
                 self.clickMsg[1] = data.message.en.id.allData.shortName
@@ -527,7 +547,6 @@ export default {
                 self.clickMsg[3] = data.message.en.id.allData.gisJosn[0][0]
                 self.clickMsg[4] = data.message.en.id.allData.region
                 self.dialogVisible = true
-
             } else if (data.message.en.id.allData.typeDesc == "防控段") {
                 self.clickMsg[0] = data.message.en.id.allData.typeDesc
                 self.clickMsg[1] = data.message.en.id.allData.shortName
@@ -535,7 +554,6 @@ export default {
                 self.clickMsg[3] = data.message.en.id.allData.lineGisJosn[0].lat
                 self.clickMsg[4] = data.message.en.id.allData.name
                 self.dialogVisible = true
-
             } else {
                 self.clickMsg[0] = data.message.en.id.allData.remarks
                 self.clickMsg[1] = data.message.en.id.allData.name
@@ -723,6 +741,11 @@ export default {
 
                 .icon6 {
                     background-image: url("./imgVue/平安版纳检查点.png");
+                    background-size: 100% 100%;
+                }
+
+                .iconLFS {
+                    background-image: url("./imgVue/联防所.png");
                     background-size: 100% 100%;
                 }
 

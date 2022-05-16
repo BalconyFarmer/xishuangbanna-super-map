@@ -78,14 +78,22 @@ export function getAllJinggaiByType(params) {
         let list = {}
         list.data = []
         allData.forEach(item => {
-            if (item.typeDesc == params) {　// 防空点,机场等
-                list.data.push(item)
-            }
-            if (item.pointName == params) { // 拦阻桩
-                list.data.push(item)
-            }
-            if (item.propertiesDesc == params) { // 唯一防空点网格
-                list.data.push(item)
+            // 联防所
+
+            if (params == "联防所") {
+                if (item.typeDesc == "防控点" && item.name.indexOf("联防所") != -1) {
+                    list.data.push(item)
+                }
+            } else {
+                if (item.typeDesc == params) {　// 防空点,机场等
+                    list.data.push(item)
+                }
+                if (item.pointName == params) { // 拦阻桩
+                    list.data.push(item)
+                }
+                if (item.propertiesDesc == params) { // 唯一防空点网格
+                    list.data.push(item)
+                }
             }
         })
         resolve(list);
@@ -149,25 +157,25 @@ login(formData).then(res => {
         })
     })
 
-/*    /!**
-     * 获取所有点2
-     *!/
-    function getAllPoint() {
-        return axios({
-            method: "get",
-            url: "http://59.216.89.250/banna-gis-api/api/gis/v1/boundary-org/config/border-organization/all-point",
-            headers: {
-                'Authorization': 'Bearer ' + token,
-            },
-        })
-    }
+    /*    /!**
+         * 获取所有点2
+         *!/
+        function getAllPoint() {
+            return axios({
+                method: "get",
+                url: "http://59.216.89.250/banna-gis-api/api/gis/v1/boundary-org/config/border-organization/all-point",
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                },
+            })
+        }
 
-    getAllPoint().then(res => {
-        console.log(res.data, "获取所有点2++++++")
-        res.data.data.forEach(item => {
-            allData.push(item)
-        })
-    })*/
+        getAllPoint().then(res => {
+            console.log(res.data, "获取所有点2++++++")
+            res.data.data.forEach(item => {
+                allData.push(item)
+            })
+        })*/
 
     /**
      * 获取所有网格3
