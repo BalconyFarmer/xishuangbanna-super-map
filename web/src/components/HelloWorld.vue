@@ -350,14 +350,8 @@ export default {
                 const self = this
                 getAllJinggaiByType(type).then(res => {
                         console.log(type, res.data, "当前选取数据")
-
                         let menuList = ['机场', '酒店', '超市', '餐饮', '查缉点', '防控点', '出租房', '医院', '学校', '银行', '公司', '候车站', '旅游景点',]
-                        let iconURL = null
-                        if (menuList.indexOf(type) != -1) {
-                            iconURL = 'd3/icons/' + "坐标-fill.png"
-                        } else {
-                            iconURL = 'd3/icons/' + type + ".png"
-                        }
+                        let iconURL = 'd3/icons/' + type + ".png"
                         if (type == "防控段") {
                             res.data.forEach(item => {
                                 let arr = []
