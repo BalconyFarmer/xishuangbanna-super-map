@@ -8,12 +8,7 @@ export default class Entities {
         this.floor = null
         this.dataSource = new Cesium.CustomDataSource('myData');
         this.initCluster()
-        this.billboards = this.app.viewer.scene.primitives.add(
-            new Cesium.BillboardCollection()
-        )
-        this.labels = this.app.viewer.scene.primitives.add(
-            new Cesium.LabelCollection()
-        );
+        this.initPrimitive()
     }
 
     initCluster() {
@@ -23,7 +18,7 @@ export default class Entities {
         this.dataSource.clustering.clusterLabels = true
         this.dataSource.clustering.clusterPoints = true
 
-        this.dataSource.clustering.shows = false
+        this.dataSource.clustering.shows = true
         this.dataSource.clustering.minimumClusterSize = 2 // 获取或设置可以聚集的最小屏幕空间对象数。
         this.dataSource.clustering.pixelRange = 15; // 获取或设置像素范围以扩展屏幕空间边界框。
         this.app.viewer.dataSources.add(this.dataSource);
@@ -33,6 +28,16 @@ export default class Entities {
             cluster.label.show = true;
             cluster.label.text = entities.length.toLocaleString();
         });
+
+    }
+
+    initPrimitive() {
+        this.billboards = this.app.viewer.scene.primitives.add(
+            new Cesium.BillboardCollection()
+        )
+        this.labels = this.app.viewer.scene.primitives.add(
+            new Cesium.LabelCollection()
+        );
     }
 
     /**
