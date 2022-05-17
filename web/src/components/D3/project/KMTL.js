@@ -30,7 +30,23 @@ export default class KMTL {
             self.app.providers.tiandiBiaozhu()
             self.app.limitCamera()
             self.loadJson()
+            self.addRegionNameManual()
         }, 500)
+
+    }
+
+    /**
+     * 老挝 缅甸 普洱
+     */
+    addRegionNameManual() {
+        let p1 = [100.966011,22.825229]
+        this.app.entities.addBillboard(p1,"普洱")
+
+        let p2 = [102.210086, 21.099609]
+        this.app.entities.addBillboard(p2,"老挝")
+
+        let p3 = [99.926314, 21.354381]
+        this.app.entities.addBillboard(p3,"缅甸")
     }
 
     change3DPhoto() {
@@ -50,17 +66,17 @@ export default class KMTL {
     }
 
     loadJson() {
-        this.app.viewer.dataSources.add(
-            Cesium.GeoJsonDataSource.load(
-                require("../../api/xsbn.json"),
-                {
-                    stroke: Cesium.Color.BLUE.withAlpha(0.5),
-                    strokeWidth: 2.3,
-                    fill: Cesium.Color.YELLOW.withAlpha(0.01),
-                    clampToGround: true // 防止图层重叠
-                }
-            )
-        );
+        // this.app.viewer.dataSources.add(
+        //     Cesium.GeoJsonDataSource.load(
+        //         require("../../api/xsbn.json"),
+        //         {
+        //             stroke: Cesium.Color.BLUE.withAlpha(0.5),
+        //             strokeWidth: 2.3,
+        //             fill: Cesium.Color.YELLOW.withAlpha(0.01),
+        //             clampToGround: true // 防止图层重叠
+        //         }
+        //     )
+        // );
 
     }
 

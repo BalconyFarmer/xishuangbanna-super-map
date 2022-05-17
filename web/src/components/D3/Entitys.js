@@ -455,40 +455,40 @@ export default class Entities {
                 clampToGround: true,
             },
             // 文字
-/*            label: {
-                classificationType: Cesium.ClassificationType.BOTH,
-                // 文本。支持显式换行符“ \ n”
-                text: (name),
-                // 字体样式,以CSS语法指定字体
-                font: '14pt Source Han Sans CN',
-                // 字体颜色
-                fillColor: this.app.Cesium.Color.WHITE,
-                // 背景颜色
-                // backgroundColor: this.app.Cesium.Color.BLACK.withAlpha(0.5),
-                // 是否显示背景颜色
-                // showBackground: true,
-                // 字体边框
-                outline: false,
-                // 字体边框颜色
-                outlineColor: this.app.Cesium.Color.BLACK,
-                // 字体边框尺寸
-                outlineWidth: 10,
-                // 应用于图像的统一比例。比例大于会1.0放大标签,而比例小于会1.0缩小标签。
-                scale: 1.0,
-                // 设置样式：FILL：填写标签的文本,但不要勾勒轮廓；OUTLINE：概述标签的文本,但不要填写；FILL_AND_OUTLINE：填写并概述标签文本。
-                style: this.app.Cesium.LabelStyle.FILL_AND_OUTLINE,
-                // 相对于坐标的水平位置
-                verticalOrigin: this.app.Cesium.VerticalOrigin.CENTER,
-                heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
-                // 相对于坐标的水平位置
-                horizontalOrigin: this.app.Cesium.HorizontalOrigin.CENTER,
-                // 该属性指定标签在屏幕空间中距此标签原点的像素偏移量
-                pixelOffset: new this.app.Cesium.Cartesian2(0, -40),
-                // 是否显示
-                show: true,
-                clampToGround: true,
+            /*            label: {
+                            classificationType: Cesium.ClassificationType.BOTH,
+                            // 文本。支持显式换行符“ \ n”
+                            text: (name),
+                            // 字体样式,以CSS语法指定字体
+                            font: '14pt Source Han Sans CN',
+                            // 字体颜色
+                            fillColor: this.app.Cesium.Color.WHITE,
+                            // 背景颜色
+                            // backgroundColor: this.app.Cesium.Color.BLACK.withAlpha(0.5),
+                            // 是否显示背景颜色
+                            // showBackground: true,
+                            // 字体边框
+                            outline: false,
+                            // 字体边框颜色
+                            outlineColor: this.app.Cesium.Color.BLACK,
+                            // 字体边框尺寸
+                            outlineWidth: 10,
+                            // 应用于图像的统一比例。比例大于会1.0放大标签,而比例小于会1.0缩小标签。
+                            scale: 1.0,
+                            // 设置样式：FILL：填写标签的文本,但不要勾勒轮廓；OUTLINE：概述标签的文本,但不要填写；FILL_AND_OUTLINE：填写并概述标签文本。
+                            style: this.app.Cesium.LabelStyle.FILL_AND_OUTLINE,
+                            // 相对于坐标的水平位置
+                            verticalOrigin: this.app.Cesium.VerticalOrigin.CENTER,
+                            heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
+                            // 相对于坐标的水平位置
+                            horizontalOrigin: this.app.Cesium.HorizontalOrigin.CENTER,
+                            // 该属性指定标签在屏幕空间中距此标签原点的像素偏移量
+                            pixelOffset: new this.app.Cesium.Cartesian2(0, -40),
+                            // 是否显示
+                            show: true,
+                            clampToGround: true,
 
-            }*/
+                        }*/
         })
 
         // 无法贴地
@@ -625,6 +625,49 @@ export default class Entities {
                 show: true,
                 clampToGround: true,
                 heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
+
+            }
+        })
+    }
+
+    addBillboard(pointS, name) {
+        const _po = this.app.c3Transform.longToC3(parseFloat(pointS[0]), parseFloat(pointS[1]), 0)
+        let entitys = this.app.viewer.entities
+        const result = entitys.add({
+            position: _po,
+            // 文字
+            label: {
+                classificationType: Cesium.ClassificationType.BOTH,
+                // 文本。支持显式换行符“ \ n”
+                text: (name),
+                // 字体样式,以CSS语法指定字体
+                font: '14pt Source Han Sans CN',
+                // 字体颜色
+                fillColor: this.app.Cesium.Color.WHITE,
+                // 背景颜色
+                // backgroundColor: this.app.Cesium.Color.BLACK.withAlpha(0.5),
+                // 是否显示背景颜色
+                // showBackground: true,
+                // 字体边框
+                outline: false,
+                // 字体边框颜色
+                outlineColor: this.app.Cesium.Color.BLACK,
+                // 字体边框尺寸
+                outlineWidth: 10,
+                // 应用于图像的统一比例。比例大于会1.0放大标签,而比例小于会1.0缩小标签。
+                scale: 1.0,
+                // 设置样式：FILL：填写标签的文本,但不要勾勒轮廓；OUTLINE：概述标签的文本,但不要填写；FILL_AND_OUTLINE：填写并概述标签文本。
+                style: this.app.Cesium.LabelStyle.FILL_AND_OUTLINE,
+                // 相对于坐标的水平位置
+                verticalOrigin: this.app.Cesium.VerticalOrigin.CENTER,
+                heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
+                // 相对于坐标的水平位置
+                horizontalOrigin: this.app.Cesium.HorizontalOrigin.CENTER,
+                // 该属性指定标签在屏幕空间中距此标签原点的像素偏移量
+                pixelOffset: new this.app.Cesium.Cartesian2(0, -40),
+                // 是否显示
+                show: true,
+                clampToGround: true,
 
             }
         })
