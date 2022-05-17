@@ -49,21 +49,20 @@ export default class KMTL {
         }
     }
 
-    loadJson () {
+    loadJson() {
         this.app.viewer.dataSources.add(
             Cesium.GeoJsonDataSource.load(
-                require("../../api/西双版纳傣族自治州.json"),
+                require("../../api/xsbn.json"),
                 {
-                    stroke: Cesium.Color.YELLOW,
-                    fill: Cesium.Color.YELLOW.withAlpha(0.0),
-                    strokeWidth: 3,
+                    stroke: Cesium.Color.BLUE.withAlpha(0.5),
+                    strokeWidth: 2.3,
+                    fill: Cesium.Color.YELLOW.withAlpha(0.01),
                     clampToGround: true // 防止图层重叠
                 }
             )
         );
+
     }
-
-
 
 
 }
