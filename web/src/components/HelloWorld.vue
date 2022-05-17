@@ -494,6 +494,10 @@ export default {
                     self.hoverMsg[0] = "名称:" + data.message.en.allData.name
                     self.hoverMsg[1] = data.message.en.allData.shortName
                     self.hoverMsg[2] = data.message.en.allData.typeDesc
+                } else if (data.message.en.allData.pointName == "摄像头") {
+                    self.hoverMsg[0] = "名称:" + data.message.en.allData.name
+                    self.hoverMsg[1] = "类型:" + data.message.en.allData.pointName
+                    self.hoverMsg[2] = "坐标:\n" + data.message.en.allData.gisJosn
                 } else {
                     self.hoverMsg[0] = "名称:" + data.message.en.allData.name
                     self.hoverMsg[1] = data.message.en.allData.remarks
@@ -546,6 +550,13 @@ export default {
                 self.clickMsg[1] = data.message.en.id.allData.shortName
                 self.clickMsg[2] = data.message.en.id.allData.lineGisJosn[0].lng
                 self.clickMsg[3] = data.message.en.id.allData.lineGisJosn[0].lat
+                self.clickMsg[4] = data.message.en.id.allData.name
+                self.dialogVisible = true
+            } else if (data.message.en.id.allData.pointName == "摄像头") {
+                self.clickMsg[0] = data.message.en.id.allData.pointName
+                self.clickMsg[1] = data.message.en.id.allData.name
+                self.clickMsg[2] = data.message.en.id.allData.gisJosn[1]
+                self.clickMsg[3] = data.message.en.id.allData.gisJosn[0]
                 self.clickMsg[4] = data.message.en.id.allData.name
                 self.dialogVisible = true
             } else {
