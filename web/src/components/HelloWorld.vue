@@ -445,10 +445,12 @@ export default {
             this.restaurants = []
             this.superApp.viewer.entities.values.forEach(item => {
                 // debugger
-                this.restaurants.push({
-                    value: item.allData.name,
-                    address: item
-                })
+                if (item.allData) {
+                    this.restaurants.push({
+                        value: item.allData.name,
+                        address: item
+                    })
+                }
             })
 
             this.superApp.viewer.dataSources._dataSources[0].entities.values.forEach(item => {
