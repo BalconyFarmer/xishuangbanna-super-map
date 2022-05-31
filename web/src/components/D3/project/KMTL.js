@@ -92,11 +92,129 @@ export default class KMTL {
             this.app.entities.addBillboard(item.location, item.name)
         })
 
-        let p2 = [102.210086, 21.099609]
-        this.app.entities.addBillboard(p2, "老挝")
 
-        let p3 = [99.926314, 21.354381]
-        this.app.entities.addBillboard(p3, "缅甸")
+        let laowo = [
+            {
+                name: "老挝",
+                location: [102.210086, 21.099609]
+            },
+            {
+                name: "永珍",
+                location: [102.6, 17.97]
+            },
+            {
+                name: "巴色",
+                location: [105.780000, 15.120000]
+            },
+            {
+                name: "凯山丰威汉市",
+                location: [104.75, 16.57]
+            },
+            {
+                name: "琅勃拉邦",
+                location: [102.14, 19.89]
+            },
+            {
+                name: "山姆怒",
+                location: [104.05, 20.42,]
+            },
+            {
+                name: "沙耶武里",
+                location: [101.75, 19.25,]
+            },
+            {
+                name: "他曲",
+                location: [104.83, 17.41]
+            },
+            {
+                name: "北汕",
+                location: [103.66, 18.38]
+            },
+            {
+                name: "会晒",
+                location: [100.43, 20.26]
+            },
+            {
+                name: "丰沙里",
+                location: [102.10, 21.68]
+            },
+            {
+                name: "阿速坡",
+                location: [106.83, 14.80]
+            },
+            {
+                name: "琅南塔",
+                location: [101.40, 20.95]
+            },
+            {
+                name: "塞公",
+                location: [106.72, 15.34]
+            },
+        ]
+        laowo.forEach(item => {
+            this.app.entities.addBillboard(item.location, item.name)
+        })
+
+        let miandian = [
+            {
+                name: "缅甸",
+                location: [99.926314, 21.354381]
+            },
+            {
+                name: "仰光",
+                location: [96.9, 16.48]
+            },
+            {
+                name: "曼德勒",
+                location: [96.09676572626198, 21.938616404728112,]
+            },
+            {
+                name: "奈比多",
+                location: [96.07879664241246, 19.75952020245242]
+            },
+            {
+                name: "東枝",
+                location: [97.03886237688157, 20.798962345761073]
+            },
+            {
+                name: "毛淡棉",
+                location: [97.6607348637817, 16.467064263236395,]
+            },
+            {
+                name: "勃固",
+                location: [96.45673411231651, 17.3244070894151,]
+            },
+            {
+                name: "蒙育瓦",
+                location: [95.16156820647811, 22.118998931127706,]
+            }, {
+                name: "密支那",
+                location: [97.36953145878888, 25.405649317200446,]
+            }, {
+                name: "勃生",
+                location: [94.74862379461064, 16.781459955924717,]
+            }, {
+                name: "實兌",
+                location: [92.86159671044213, 20.17197169431312,]
+            }, {
+                name: "卑谬",
+                location: [95.25251797415798, 18.833664013215195,]
+            }, {
+                name: "木各具",
+                location: [95.06508291848091, 21.339384340903017,]
+            }, {
+                name: "丹老",
+                location: [98.6304266129126, 12.449620239423682,]
+            }, {
+                name: "密铁拉",
+                location: [95.86899646429028, 20.88091189140574,]
+            },
+        ]
+
+        miandian.forEach(item => {
+            this.app.entities.addBillboard(item.location, item.name)
+        })
+
     }
 
     change3DPhoto() {
