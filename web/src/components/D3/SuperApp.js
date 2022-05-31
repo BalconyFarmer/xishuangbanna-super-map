@@ -6,7 +6,6 @@ import Environment from "./Environment"
 import Camera from "./Camera";
 import Event from "./Event";
 import C3Transform from "./C3Transform";
-import Img3D from "./Img3D";
 import Analyse from "./Analyse";
 import Measure from "@/components/D3/Measure";
 import Draw from "@/components/D3/Draw";
@@ -23,7 +22,6 @@ export default class SuperApp {
         this.camera = new Camera(this)
         this.event = new Event(this)
         this.c3Transform = new C3Transform(this)
-        this.img3D = new Img3D(this)
         this.analyse = new Analyse(this)
         this.measure = new Measure(this)
         this.draw = new Draw(this)

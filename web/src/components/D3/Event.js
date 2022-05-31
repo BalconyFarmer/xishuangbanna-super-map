@@ -1,4 +1,3 @@
-let FileSaver = require('file-saver');
 
 export default class Event {
     constructor(app) {
@@ -120,9 +119,9 @@ export default class Event {
     }
 
     exportReceivePoints() {
-        let blob = new Blob([JSON.stringify(this.posintsList)], {type: ""});
-        FileSaver.saveAs(blob, "hello world.json");
-        this.posintsList = []
+        // let blob = new Blob([JSON.stringify(this.posintsList)], {type: ""});
+        // FileSaver.saveAs(blob, "hello world.json");
+        // this.posintsList = []
     }
 
 

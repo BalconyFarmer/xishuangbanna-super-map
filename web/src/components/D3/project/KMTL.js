@@ -39,14 +39,64 @@ export default class KMTL {
      * 老挝 缅甸 普洱
      */
     addRegionNameManual() {
-        let p1 = [100.966011,22.825229]
-        this.app.entities.addBillboard(p1,"普洱")
+        let p1 = [100.966011, 22.825229]
+
+        let puer = [
+            {
+                name: "普洱市",
+                location: [100.966011, 22.825229]
+            },
+            {
+                name: "思茅区",
+                location: [100.97692, 22.78684]
+            },
+            {
+                name: "宁洱哈尼族彝族自治县",
+                location: [101.04539, 23.06167]
+            },
+            {
+                name: "墨江哈尼族自治县",
+                location: [101.69223, 23.43185]
+            },
+            {
+                name: "景东彝族自治县",
+                location: [100.8339, 24.44697]
+            },
+            {
+                name: "景谷傣族彝族自治县",
+                location: [100.7029, 23.49704]
+            },
+            {
+                name: "镇沅彝族哈尼族拉祜族自治县",
+                location: [101.10843, 24.00461]
+            },
+            {
+                name: "江城哈尼族彝族自治县",
+                location: [101.86237, 22.58518]
+            },
+            {
+                name: "孟连傣族拉祜族佤族自治县",
+                location: [99.58441, 22.32911]
+            },
+            {
+                name: "孟连傣族拉祜族佤族自治县",
+                location: [99.93208, 22.55577]
+            },
+            {
+                name: "孟连傣族拉祜族佤族自治县",
+                location: [99.59018, 22.64435]
+            },
+        ]
+
+        puer.forEach(item => {
+            this.app.entities.addBillboard(item.location, item.name)
+        })
 
         let p2 = [102.210086, 21.099609]
-        this.app.entities.addBillboard(p2,"老挝")
+        this.app.entities.addBillboard(p2, "老挝")
 
         let p3 = [99.926314, 21.354381]
-        this.app.entities.addBillboard(p3,"缅甸")
+        this.app.entities.addBillboard(p3, "缅甸")
     }
 
     change3DPhoto() {
