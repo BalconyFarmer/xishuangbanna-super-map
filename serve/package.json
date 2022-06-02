@@ -39,5 +39,6 @@
   "keywords": [
     "koajs"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "__npminstall_done": false
 }
