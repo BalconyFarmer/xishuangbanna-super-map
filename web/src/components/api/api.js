@@ -237,7 +237,7 @@ login(formData).then(res => {
             method: "post",
             url: "http://59.216.89.250/banna-digital-passes-api/gis-server/api/checkpoint/v1/query-checkpoint",
             data: {
-                "limit": 1000,
+                "limit": 10000,
                 "type": "",
                 "typeDesc": ['机场', '酒店', '超市', '餐饮', '查缉点', '防控点', '出租房', '医院', '学校', '银行', '公司', '候车站', '旅游景点','联防所检查点'],
                 "level": 9,
