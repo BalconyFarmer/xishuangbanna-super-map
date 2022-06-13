@@ -56,7 +56,7 @@ import data6 from './gisApiReal/机场.json'
 import data7 from './gisApiReal/联防所检查点.json'
 
 // <!--    2线上发布核对此处: 以下代码要注释掉-->
-data1.data.forEach(item => {
+/*data1.data.forEach(item => {
     allData.push(item)
 })
 
@@ -74,7 +74,7 @@ data6.data.forEach(item => {
 })
 data7.data.forEach(item => {
     allData.push(item)
-})
+})*/
 
 
 export function getAllJinggaiByType(params) {
