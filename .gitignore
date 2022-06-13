@@ -22,3 +22,4 @@ pnpm-debug.log*
 *.sln
 *.sw?
 /public/lib/js/
+/web/dist_electron/

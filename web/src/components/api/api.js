@@ -53,9 +53,10 @@ import data1 from './gisApiReal/1response.json'
 import data3 from './gisApiReal/3response.json'
 import data4 from './gisApiReal/4response.json'
 import data6 from './gisApiReal/机场.json'
+import data7 from './gisApiReal/联防所检查点.json'
 
 // <!--    2线上发布核对此处: 以下代码要注释掉-->
-/*data1.data.forEach(item => {
+data1.data.forEach(item => {
     allData.push(item)
 })
 
@@ -70,7 +71,10 @@ data4.data.content.forEach(item => {
 })
 data6.data.forEach(item => {
     allData.push(item)
-})*/
+})
+data7.data.forEach(item => {
+    allData.push(item)
+})
 
 
 export function getAllJinggaiByType(params) {
@@ -81,7 +85,7 @@ export function getAllJinggaiByType(params) {
             // 联防所
 
             if (params == "联防所") {
-                if (item.typeDesc == "防控点" && item.name.indexOf("联防所") != -1) {
+                if (item.typeDesc == "联防所检查点") {
                     list.data.push(item)
                 }
             } else {

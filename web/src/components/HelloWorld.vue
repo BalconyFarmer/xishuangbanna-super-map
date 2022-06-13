@@ -477,16 +477,9 @@ export default {
                 let menuList = ['机场', '酒店', '超市', '餐饮', '查缉点', '防控点', '出租房', '医院', '学校', '银行', '公司', '候车站', '旅游景点',]
 
                 if (menuList.indexOf(data.message.en.allData.typeDesc) != -1) {
-                    if (data.message.en.allData.typeDesc == "防控点" && data.message.en.allData.name.indexOf("联防所") != -1) {
-                        self.hoverMsg[0] = "名称:" + data.message.en.allData.name
-                        self.hoverMsg[1] = "类型:" + "联防所"
-                        self.hoverMsg[2] = "坐标:" + data.message.en.allData.gisJson
-                    } else {
-                        self.hoverMsg[0] = "名称:" + data.message.en.allData.name
-                        self.hoverMsg[1] = "类型:" + data.message.en.allData.typeDesc
-                        self.hoverMsg[2] = "坐标:" + data.message.en.allData.gisJson
-                    }
-
+                    self.hoverMsg[0] = "名称:" + data.message.en.allData.name
+                    self.hoverMsg[1] = "类型:" + data.message.en.allData.typeDesc
+                    self.hoverMsg[2] = "坐标:" + data.message.en.allData.gisJson
                 } else if (data.message.en.allData.propertiesDesc == "网格") {
                     self.hoverMsg[0] = "名称:" + data.message.en.allData.name
                     self.hoverMsg[1] = data.message.en.allData.typeDesc
@@ -500,6 +493,10 @@ export default {
                     self.hoverMsg[0] = "名称:" + data.message.en.allData.name
                     self.hoverMsg[1] = "类型:" + data.message.en.allData.pointName
                     self.hoverMsg[2] = "坐标:\n" + data.message.en.allData.gisJosn
+                } else if (data.message.en.allData.typeDesc == "联防所检查点") {
+                    self.hoverMsg[0] = "名称:" + data.message.en.allData.name
+                    self.hoverMsg[1] = "类型:" + data.message.en.allData.typeDesc
+                    self.hoverMsg[2] = "坐标:\n" + data.message.en.allData.gisJson
                 } else {
                     self.hoverMsg[0] = "名称:" + data.message.en.allData.name
                     self.hoverMsg[1] = data.message.en.allData.remarks
@@ -524,22 +521,13 @@ export default {
 
             let menuList = ['机场', '酒店', '超市', '餐饮', '查缉点', '防控点', '出租房', '医院', '学校', '银行', '公司', '候车站', '旅游景点',]
 
-            if (menuList.indexOf(data.message.en.id.allData.typeDesc) != -1) {
-                if (data.message.en.id.allData.name.indexOf("联防所") != -1) {
-                    self.clickMsg[0] = "联防所"
-                    self.clickMsg[1] = data.message.en.id.allData.name
-                    self.clickMsg[2] = data.message.en.id.allData.gisJson[1]
-                    self.clickMsg[3] = data.message.en.id.allData.gisJson[0]
-                    self.clickMsg[4] = ""
-                    self.dialogVisible = true
-                } else {
-                    self.clickMsg[0] = data.message.en.id.allData.typeDesc
-                    self.clickMsg[1] = data.message.en.id.allData.name
-                    self.clickMsg[2] = data.message.en.id.allData.gisJson[1]
-                    self.clickMsg[3] = data.message.en.id.allData.gisJson[0]
-                    self.clickMsg[4] = ""
-                    self.dialogVisible = true
-                }
+            if (data.message.en.id.allData.typeDesc == "联防所检查点") {
+                self.clickMsg[0] = "联防所"
+                self.clickMsg[1] = data.message.en.id.allData.name
+                self.clickMsg[2] = data.message.en.id.allData.gisJson[1]
+                self.clickMsg[3] = data.message.en.id.allData.gisJson[0]
+                self.clickMsg[4] = ""
+                self.dialogVisible = true
             } else if (data.message.en.id.allData.propertiesDesc == "网格") {
                 self.clickMsg[0] = data.message.en.id.allData.name
                 self.clickMsg[1] = data.message.en.id.allData.shortName
